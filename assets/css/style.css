@@ -2338,11 +2338,17 @@ body {
 body[data-page="inicio"] .site-header {
   animation: home-header-enter 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
+.hero h1 {
+  font-weight: 400;
+}
 .header-inner {
   gap: clamp(14px, 1.3vw, 22px);
 }
 .nav {
   gap: clamp(16px, 1.35vw, 24px);
+}
+.nav a {
+  font-weight: 500;
 }
 .nav a::after {
   display: block;
@@ -2355,6 +2361,7 @@ body[data-page="inicio"] .site-header {
 }
 .button {
   gap: 0.5em;
+  font-weight: 600;
   transition:
     border-color 0.25s ease,
     background-color 0.25s ease,
