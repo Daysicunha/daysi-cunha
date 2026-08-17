@@ -136,6 +136,24 @@
     window.addEventListener("resize", requestHeroUpdate);
   }
 
+  const valueSection = document.querySelector(".value");
+  if (
+    valueSection &&
+    !reduceMotion &&
+    "IntersectionObserver" in window
+  ) {
+    valueSection.dataset.revealReady = "true";
+    const valueObserver = new IntersectionObserver(
+      ([entry], observer) => {
+        if (!entry.isIntersecting) return;
+        valueSection.classList.add("is-revealed");
+        observer.unobserve(valueSection);
+      },
+      { threshold: 0.18 },
+    );
+    valueObserver.observe(valueSection);
+  }
+
   const contactForm = document.querySelector("[data-contact-form]");
   if (contactForm) {
     const selectedService = new URLSearchParams(window.location.search).get(
