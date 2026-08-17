@@ -1,0 +1,17 @@
+{
+  "name": "Daysi Cunha | Presença Digital Estratégica",
+  "short_name": "Daysi Cunha",
+  "description": "Landing pages e sites institucionais com estratégia, clareza e intenção.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0A",
+  "theme_color": "#0A0A0A",
+  "icons": [
+    {
+      "src": "assets/images/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
