@@ -2615,7 +2615,7 @@ body[data-page="inicio"] .site-header {
 .value.is-revealed .value-header .tag,
 .value.is-revealed .value-header h2,
 .value.is-revealed .value-header > p:last-child,
-.value-item.is-revealed {
+.value[data-reveal-ready="true"] .value-item.is-revealed {
   opacity: 1;
   transform: translateY(0);
 }
@@ -2631,10 +2631,10 @@ body[data-page="inicio"] .site-header {
 .value-item:nth-child(4).is-revealed .value-line {
   transition-delay: 1.18s;
 }
-.value-item.is-revealed .value-line {
+.value[data-reveal-ready="true"] .value-item.is-revealed .value-line {
   transform: scaleX(1);
 }
-.value-item.is-revealed:hover {
+.value[data-reveal-ready="true"] .value-item.is-revealed:hover {
   transform: translateY(-4px);
 }
 
@@ -2651,13 +2651,13 @@ body[data-page="inicio"] .site-header {
     transform: translateY(16px);
     transition-delay: 0.08s, 0.08s, 0s, 0s;
   }
-  .value-item.is-revealed {
+  .value[data-reveal-ready="true"] .value-item.is-revealed {
     transform: translateY(0);
   }
-  .value-item.is-revealed .value-line {
+  .value[data-reveal-ready="true"] .value-item.is-revealed .value-line {
     transition-delay: 0.32s;
   }
-  .value-item.is-revealed:hover {
+  .value[data-reveal-ready="true"] .value-item.is-revealed:hover {
     transform: none;
   }
 }
