@@ -21,7 +21,7 @@
           <a class="brand" href="${root}index.html" aria-label="Daysi Cunha, página inicial"><span class="brand-daysi">DAYSI</span><span class="brand-cunha">CUNHA</span><span class="brand-point" aria-hidden="true">.</span></a>
           <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-menu"><span></span><span></span></button>
           <nav class="nav" id="main-menu" aria-label="Navegação principal">
-            ${navItems.map(([href, label, key], index) => `${index ? '<span class="nav-separator" aria-hidden="true">•</span>' : ""}<a href="${root}${href}" ${page === key ? 'aria-current="page"' : ""}>${label}</a>`).join("")}
+            ${navItems.map(([href, label, key]) => `<a href="${root}${href}" ${page === key ? 'aria-current="page"' : ""}>${label}</a>`).join("")}
           </nav>
           <div class="header-social" aria-label="Redes sociais">
             <a href="${site.social.linkedin}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
@@ -87,6 +87,53 @@
         );
       });
     });
+  }
+
+  const hero = document.querySelector(".hero-editorial");
+  const heroImage = hero?.querySelector(".hero-portrait img");
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  if (hero && heroImage && !reduceMotion) {
+    let animationFrame = 0;
+    let heroIsVisible = true;
+
+    const updateHeroImage = () => {
+      animationFrame = 0;
+      if (!heroIsVisible) return;
+
+      const bounds = hero.getBoundingClientRect();
+      const progress = Math.min(
+        1,
+        Math.max(0, -bounds.top / Math.max(bounds.height, 1)),
+      );
+      heroImage.style.setProperty(
+        "--hero-image-shift",
+        `${(progress * 14).toFixed(2)}px`,
+      );
+      heroImage.style.setProperty(
+        "--hero-image-scale",
+        (1.025 + progress * 0.015).toFixed(4),
+      );
+    };
+
+    const requestHeroUpdate = () => {
+      if (!animationFrame)
+        animationFrame = window.requestAnimationFrame(updateHeroImage);
+    };
+
+    if ("IntersectionObserver" in window) {
+      const heroObserver = new IntersectionObserver(([entry]) => {
+        heroIsVisible = entry.isIntersecting;
+        if (heroIsVisible) requestHeroUpdate();
+      });
+      heroObserver.observe(hero);
+    }
+
+    updateHeroImage();
+    window.addEventListener("scroll", requestHeroUpdate, { passive: true });
+    window.addEventListener("resize", requestHeroUpdate);
   }
 
   const contactForm = document.querySelector("[data-contact-form]");
