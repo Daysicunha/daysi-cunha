@@ -143,7 +143,7 @@
     "IntersectionObserver" in window
   ) {
     valueSection.dataset.revealReady = "true";
-    const valueObserver = new IntersectionObserver(
+    const valueHeaderObserver = new IntersectionObserver(
       ([entry], observer) => {
         if (!entry.isIntersecting) return;
         valueSection.classList.add("is-revealed");
@@ -151,7 +151,20 @@
       },
       { threshold: 0.18 },
     );
-    valueObserver.observe(valueSection);
+    valueHeaderObserver.observe(valueSection);
+
+    const valueItems = valueSection.querySelectorAll(".value-item");
+    const valueItemObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-revealed");
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.24, rootMargin: "0px 0px -6% 0px" },
+    );
+    valueItems.forEach((item) => valueItemObserver.observe(item));
   }
 
   const contactForm = document.querySelector("[data-contact-form]");
