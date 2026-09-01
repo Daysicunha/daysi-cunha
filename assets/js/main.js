@@ -80,7 +80,7 @@
       band.setAttribute("aria-label", "Faça o Bem");
       band.innerHTML = `
         <div class="container good-band__inner">
-          <a class="good-band__label" href="${root}faca-o-bem.html" aria-label="Conhecer a iniciativa Faça o Bem">${campaign.label || "FAÇA O BEM"}</a>
+          <a class="good-band__label" href="https://daysicunha.com.br/faca-o-bem.html" aria-label="Conhecer a iniciativa Faça o Bem">${campaign.label || "FAÇA O BEM"}</a>
           <span class="good-band__separator" aria-hidden="true">•</span>
           <span class="good-band__message">${campaign.message || "Conheça a iniciativa em destaque."}</span>
           ${campaign.period ? `<span class="good-band__separator good-band__separator--period" aria-hidden="true">•</span><span class="good-band__period">${campaign.period}</span>` : ""}
@@ -118,26 +118,17 @@
     document.querySelectorAll(".button--primary").forEach((button) => {
       button.addEventListener("pointermove", (event) => {
         const rect = button.getBoundingClientRect();
-        button.style.setProperty(
-          "--pointer-x",
-          `${event.clientX - rect.left}px`,
-        );
-        button.style.setProperty(
-          "--pointer-y",
-          `${event.clientY - rect.top}px`,
-        );
+        button.style.setProperty("--pointer-x", `${event.clientX - rect.left}px`);
+        button.style.setProperty("--pointer-y", `${event.clientY - rect.top}px`);
       });
     });
   }
 
   const contactForm = document.querySelector("[data-contact-form]");
   if (contactForm) {
-    const selectedService = new URLSearchParams(window.location.search).get(
-      "servico",
-    );
+    const selectedService = new URLSearchParams(window.location.search).get("servico");
     const serviceField = contactForm.elements.service;
-    if (selectedService && site.services[selectedService])
-      serviceField.value = selectedService;
+    if (selectedService && site.services[selectedService]) serviceField.value = selectedService;
     contactForm.addEventListener("submit", (event) => {
       event.preventDefault();
       const data = new FormData(contactForm);
@@ -151,9 +142,7 @@
         `Objetivo: ${data.get("goal")}`,
         `Prazo: ${data.get("deadline") || "Não informado"}`,
       ].join("\n");
-      window.location.assign(
-        `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`,
-      );
+      window.location.assign(`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`);
     });
   }
 
@@ -167,10 +156,8 @@
     const query = blogSearch ? blogSearch.value.toLowerCase().trim() : "";
     let visible = 0;
     articleCards.forEach((card) => {
-      const categoryMatches =
-        activeCategory === "todos" || card.dataset.category === activeCategory;
-      const queryMatches =
-        !query || card.textContent.toLowerCase().includes(query);
+      const categoryMatches = activeCategory === "todos" || card.dataset.category === activeCategory;
+      const queryMatches = !query || card.textContent.toLowerCase().includes(query);
       const show = categoryMatches && queryMatches;
       card.hidden = !show;
       if (show) visible += 1;
