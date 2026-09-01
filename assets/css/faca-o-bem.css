@@ -1,0 +1,161 @@
+.good-band {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0d0d0d;
+}
+
+.good-band__inner {
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding-block: 10px;
+  text-align: center;
+}
+
+.good-band__label {
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  white-space: nowrap;
+}
+
+.good-band__separator {
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.good-band__message,
+.good-band__period {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.good-band__link {
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.good-band__link:hover {
+  color: var(--accent);
+}
+
+.good-band__link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.good-cause-page {
+  padding: 132px 0 96px;
+}
+
+.good-cause-page__intro {
+  max-width: 820px;
+}
+
+.good-cause-page h1 {
+  max-width: 9ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 300;
+  letter-spacing: -0.07em;
+  line-height: 0.95;
+}
+
+.good-cause-page__lead {
+  max-width: 680px;
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.good-cause-current {
+  margin-top: 64px;
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 0.45fr 1fr;
+  gap: 32px;
+}
+
+.good-cause-current__meta {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.good-cause-current h2 {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+}
+
+.good-cause-current p {
+  max-width: 620px;
+  margin: 0;
+  color: var(--muted);
+}
+
+.good-cause-principles {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.good-cause-principles article {
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+.good-cause-principles h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.good-cause-principles p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 760px) {
+  .good-band__inner {
+    min-height: auto;
+    flex-wrap: wrap;
+    gap: 6px 9px;
+    padding-block: 11px;
+  }
+
+  .good-band__message {
+    width: 100%;
+    order: 3;
+  }
+
+  .good-band__period,
+  .good-band__separator--period {
+    display: none;
+  }
+
+  .good-cause-page {
+    padding-top: 104px;
+  }
+
+  .good-cause-current,
+  .good-cause-principles {
+    grid-template-columns: 1fr;
+  }
+}
