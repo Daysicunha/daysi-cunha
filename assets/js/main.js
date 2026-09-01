@@ -12,6 +12,14 @@
     ["contato.html", "Contato", "contato"],
   ];
 
+  if (!document.querySelector("[data-good-band-style]")) {
+    const goodBandStyle = document.createElement("link");
+    goodBandStyle.rel = "stylesheet";
+    goodBandStyle.href = `${root}assets/css/faca-o-bem.css`;
+    goodBandStyle.dataset.goodBandStyle = "";
+    document.head.appendChild(goodBandStyle);
+  }
+
   const headerTarget = document.querySelector("[data-site-header]");
   if (headerTarget) {
     headerTarget.innerHTML = `
@@ -56,6 +64,39 @@
         <div class="container footer-status footer-status--center"><span>Local: Brasil — <time id="clock" aria-label="Horário de São Paulo"></time></span></div>
         <div class="container footer-copyright"><span>© ${new Date().getFullYear()} Daysi Cunha. Todos os direitos reservados.</span><span>Designed &amp; Developed by Daysi Cunha</span></div>
       </footer>`;
+
+    const renderGoodBand = (campaign) => {
+      if (!campaign || !campaign.enabled) return;
+
+      const campaignUrl = campaign.external
+        ? campaign.url
+        : `${root}${campaign.url}`;
+      const externalAttributes = campaign.external
+        ? ' target="_blank" rel="noopener noreferrer"'
+        : "";
+
+      const band = document.createElement("aside");
+      band.className = "good-band";
+      band.setAttribute("aria-label", "Faça o Bem");
+      band.innerHTML = `
+        <div class="container good-band__inner">
+          <strong class="good-band__label">${campaign.label || "FAÇA O BEM"}</strong>
+          <span class="good-band__separator" aria-hidden="true">•</span>
+          <span class="good-band__message">${campaign.message || "Conheça a iniciativa em destaque."}</span>
+          ${campaign.period ? `<span class="good-band__separator good-band__separator--period" aria-hidden="true">•</span><span class="good-band__period">${campaign.period}</span>` : ""}
+          <a class="good-band__link" href="${campaignUrl}"${externalAttributes}>${campaign.linkLabel || "Conhecer e contribuir"} <span aria-hidden="true">↗</span></a>
+        </div>`;
+      footerTarget.prepend(band);
+    };
+
+    fetch(`${root}assets/data/good-campaign.json`, { cache: "no-cache" })
+      .then((response) => {
+        if (!response.ok) throw new Error("Campanha indisponível");
+        return response.json();
+      })
+      .then(renderGoodBand)
+      .catch(() => {});
+
     const clock = footerTarget.querySelector("#clock");
     const updateClock = () => {
       clock.textContent = new Intl.DateTimeFormat("pt-BR", {
