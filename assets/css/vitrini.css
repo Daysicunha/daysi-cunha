@@ -1,7 +1,7 @@
 .vitrini-hero {
   position: relative;
   overflow: hidden;
-  padding: 118px 0 88px;
+  padding: 112px 0 84px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -23,12 +23,12 @@
 }
 
 .vitrini-hero__copy h1 {
-  margin: 18px 0 24px;
+  margin: 18px 0 30px;
   font-family: var(--font-display);
-  font-size: clamp(3.15rem, 7vw, 6.9rem);
+  font-size: clamp(2.9rem, 5.6vw, 5.75rem);
   font-weight: 600;
-  letter-spacing: -0.075em;
-  line-height: 0.9;
+  letter-spacing: -0.068em;
+  line-height: 0.94;
 }
 
 .vitrini-hero__copy h1 span {
@@ -36,24 +36,25 @@
 }
 
 .vitrini-hero__lead {
-  max-width: 650px;
+  max-width: 610px;
   margin: 0;
   color: var(--muted);
-  font-size: clamp(1.04rem, 1.6vw, 1.2rem);
+  font-size: clamp(1rem, 1.4vw, 1.14rem);
+  line-height: 1.65;
 }
 
 .vitrini-hero__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 32px;
+  gap: 14px;
+  margin-top: 30px;
 }
 
 .vitrini-hero__meta {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
-  margin-top: 48px;
+  margin-top: 42px;
   border-block: 1px solid var(--border);
 }
 
@@ -557,6 +558,15 @@
 
   .vitrini-hero__grid {
     gap: 44px;
+  }
+
+  .vitrini-hero__copy h1 {
+    font-size: clamp(2.55rem, 11vw, 4.25rem);
+    line-height: 0.97;
+  }
+
+  .vitrini-hero__copy h1 {
+    margin-bottom: 26px;
   }
 
   .vitrini-hero__meta,
