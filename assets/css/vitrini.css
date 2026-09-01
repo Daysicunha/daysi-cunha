@@ -1,0 +1,641 @@
+.vitrini-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 112px 0 84px;
+  border-bottom: 1px solid var(--border);
+}
+
+.vitrini-hero::before {
+  content: "";
+  position: absolute;
+  inset: -20% -10% auto 45%;
+  height: 680px;
+  background: radial-gradient(circle, rgba(194, 163, 98, 0.14), transparent 62%);
+  pointer-events: none;
+}
+
+.vitrini-hero__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.vitrini-hero__copy h1 {
+  margin: 18px 0 30px;
+  font-family: var(--font-display);
+  font-size: clamp(2.9rem, 5.6vw, 5.75rem);
+  font-weight: 600;
+  letter-spacing: -0.068em;
+  line-height: 0.94;
+}
+
+.vitrini-hero__copy h1 span {
+  color: var(--accent);
+}
+
+.vitrini-hero__lead {
+  max-width: 610px;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.4vw, 1.14rem);
+  line-height: 1.65;
+}
+
+.vitrini-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.vitrini-hero__meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 42px;
+  border-block: 1px solid var(--border);
+}
+
+.vitrini-hero__meta div {
+  display: grid;
+  gap: 5px;
+  padding: 18px 18px 18px 0;
+}
+
+.vitrini-hero__meta div + div {
+  padding-left: 18px;
+  border-left: 1px solid var(--border);
+}
+
+.vitrini-hero__meta span,
+.vitrini-buy__label {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.vitrini-hero__meta strong {
+  font-size: 0.98rem;
+}
+
+.vitrini-demo {
+  position: relative;
+  min-height: 600px;
+}
+
+.vitrini-demo__glow {
+  position: absolute;
+  inset: 11% 5% 8% 9%;
+  border-radius: 50%;
+  background: rgba(194, 163, 98, 0.09);
+  filter: blur(65px);
+}
+
+.vitrini-demo__catalog,
+.vitrini-demo__admin {
+  position: absolute;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #f4f0e8;
+  color: #111;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+.vitrini-demo__catalog {
+  inset: 24px 54px 34px 0;
+  padding: 24px;
+  border-radius: 28px;
+  transform: rotate(-2.4deg);
+}
+
+.vitrini-demo__topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  font-family: var(--font-display);
+}
+
+.vitrini-demo__brand {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.vitrini-demo__menu {
+  color: #68645d;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+}
+
+.vitrini-demo__title {
+  display: grid;
+  gap: 8px;
+  padding: 42px 0 30px;
+}
+
+.vitrini-demo__title small,
+.vitrini-demo__products small {
+  color: #8a6d32;
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.08em;
+}
+
+.vitrini-demo__title strong {
+  max-width: 12ch;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.7rem);
+  line-height: 1;
+}
+
+.vitrini-demo__filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 0.62rem;
+}
+
+.vitrini-demo__filters span {
+  padding: 7px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+}
+
+.vitrini-demo__filters .is-active {
+  border-color: #111;
+  background: #111;
+  color: #fff;
+}
+
+.vitrini-demo__products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.vitrini-demo__products article {
+  display: grid;
+  gap: 4px;
+}
+
+.vitrini-demo__photo {
+  min-height: 145px;
+  margin-bottom: 7px;
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 68% 25%, rgba(255,255,255,0.88), transparent 25%),
+    linear-gradient(150deg, #c7b38d, #6f604b);
+}
+
+.vitrini-demo__products article:nth-child(2) .vitrini-demo__photo {
+  background:
+    radial-gradient(circle at 32% 68%, rgba(255,255,255,0.7), transparent 23%),
+    linear-gradient(150deg, #ba8f82, #6c4036);
+}
+
+.vitrini-demo__products article:nth-child(3) .vitrini-demo__photo {
+  background:
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,0.75), transparent 24%),
+    linear-gradient(150deg, #79877f, #3e4a44);
+}
+
+.vitrini-demo__products strong,
+.vitrini-demo__products b {
+  font-size: 0.72rem;
+}
+
+.vitrini-demo__admin {
+  right: 0;
+  bottom: 0;
+  width: min(300px, 48%);
+  padding: 20px;
+  border-radius: 22px;
+  background: #111;
+  color: #f4f0e8;
+  transform: rotate(2deg);
+}
+
+.vitrini-demo__admin-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #c2a362;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+}
+
+.vitrini-demo__admin-head i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #c2a362;
+  box-shadow: 0 0 14px rgba(194,163,98,0.65);
+}
+
+.vitrini-demo__admin p {
+  margin: 16px 0 12px;
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 600;
+}
+
+.vitrini-demo__admin-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255,255,255,0.09);
+  color: #c6c6c6;
+  font-size: 0.72rem;
+}
+
+.vitrini-demo__admin-row b {
+  color: #c2a362;
+  font-weight: 500;
+}
+
+.vitrini-demo__admin button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: #c2a362;
+  color: #111;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.vitrini-problem,
+.vitrini-features,
+.vitrini-flow,
+.vitrini-fit,
+.vitrini-buy,
+.vitrini-faq {
+  padding: 96px 0;
+}
+
+.vitrini-problem {
+  border-bottom: 1px solid var(--border);
+}
+
+.vitrini-problem__grid,
+.vitrini-fit__grid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.vitrini-problem h2,
+.vitrini-section-head h2,
+.vitrini-fit h2,
+.vitrini-buy h2,
+.vitrini-faq h2 {
+  margin: 12px 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.4vw, 4.25rem);
+  font-weight: 600;
+  letter-spacing: -0.065em;
+  line-height: 1;
+}
+
+.vitrini-problem__copy {
+  padding-top: 46px;
+}
+
+.vitrini-problem__copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.vitrini-problem__copy p + p {
+  margin-top: 22px;
+}
+
+.vitrini-section-head {
+  max-width: 850px;
+  margin-bottom: 48px;
+}
+
+.vitrini-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+}
+
+.vitrini-feature-grid article {
+  min-height: 280px;
+  padding: 30px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(145deg, rgba(255,255,255,0.025), transparent);
+}
+
+.vitrini-feature-grid article > span,
+.vitrini-flow__steps > li > span {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+}
+
+.vitrini-feature-grid h3 {
+  margin: 56px 0 10px;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.vitrini-feature-grid p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.vitrini-flow {
+  background: #0d0d0d;
+  border-block: 1px solid var(--border);
+}
+
+.vitrini-flow__steps {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--border);
+  list-style: none;
+}
+
+.vitrini-flow__steps li {
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 22px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.vitrini-flow__steps strong {
+  display: block;
+  margin-bottom: 5px;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.vitrini-flow__steps p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.vitrini-fit__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--border);
+}
+
+.vitrini-fit__list span {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.vitrini-fit__list span:nth-child(even) {
+  padding-left: 20px;
+  border-left: 1px solid var(--border);
+}
+
+.vitrini-buy__card {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 64px;
+  padding: 54px;
+  border: 1px solid rgba(194, 163, 98, 0.34);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 88% 20%, rgba(194, 163, 98, 0.13), transparent 30%),
+    linear-gradient(145deg, #17150f, #0e0e0e 70%);
+}
+
+.vitrini-buy__copy > p:not(.tag) {
+  max-width: 620px;
+  color: var(--muted);
+}
+
+.vitrini-buy__copy ul {
+  display: grid;
+  gap: 10px;
+  margin: 28px 0 0;
+  padding: 0;
+  color: var(--muted);
+  list-style: none;
+}
+
+.vitrini-buy__copy li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.vitrini-buy__copy li::before {
+  position: absolute;
+  top: 0.72em;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  content: "";
+}
+
+.vitrini-buy__checkout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 34px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 22px;
+  background: rgba(0,0,0,0.2);
+}
+
+.vitrini-buy__price {
+  display: flex;
+  align-items: flex-start;
+  margin: 14px 0 12px;
+  font-family: var(--font-display);
+}
+
+.vitrini-buy__price strong {
+  font-size: clamp(4.5rem, 8vw, 7rem);
+  font-weight: 600;
+  letter-spacing: -0.08em;
+  line-height: 0.85;
+}
+
+.vitrini-buy__price small {
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.vitrini-buy__checkout > p {
+  margin: 0 0 24px;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.vitrini-buy__button {
+  width: 100%;
+}
+
+.vitrini-buy__button[aria-disabled="true"] {
+  cursor: default;
+  opacity: 0.76;
+}
+
+.vitrini-buy__status {
+  margin-top: 10px;
+  color: #8d8d8d;
+  text-align: center;
+}
+
+.service-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.service-card--product {
+  border-color: rgba(194, 163, 98, 0.42);
+  background:
+    radial-gradient(circle at 90% 12%, rgba(194, 163, 98, 0.18), transparent 32%),
+    linear-gradient(145deg, #17150f, #0e0e0e 72%);
+}
+
+.service-card__badge {
+  position: relative;
+  width: max-content;
+  margin: -12px 0 22px;
+  padding: 6px 9px;
+  border: 1px solid rgba(194,163,98,0.38);
+  border-radius: 999px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1000px) {
+  .vitrini-hero__grid,
+  .vitrini-buy__card,
+  .vitrini-problem__grid,
+  .vitrini-fit__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vitrini-demo {
+    min-height: 560px;
+  }
+
+  .vitrini-feature-grid,
+  .service-grid--3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .vitrini-problem__copy {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .vitrini-hero {
+    padding: 92px 0 64px;
+  }
+
+  .vitrini-hero__grid {
+    gap: 44px;
+  }
+
+  .vitrini-hero__copy h1 {
+    font-size: clamp(2.55rem, 11vw, 4.25rem);
+    line-height: 0.97;
+  }
+
+  .vitrini-hero__copy h1 {
+    margin-bottom: 26px;
+  }
+
+  .vitrini-hero__meta,
+  .vitrini-feature-grid,
+  .vitrini-fit__list,
+  .service-grid--3 {
+    grid-template-columns: 1fr;
+  }
+
+  .vitrini-hero__meta div + div {
+    padding-left: 0;
+    border-top: 1px solid var(--border);
+    border-left: 0;
+  }
+
+  .vitrini-demo {
+    min-height: 510px;
+  }
+
+  .vitrini-demo__catalog {
+    inset: 10px 18px 88px 0;
+    padding: 16px;
+  }
+
+  .vitrini-demo__admin {
+    right: 0;
+    width: 66%;
+  }
+
+  .vitrini-demo__products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vitrini-demo__products article:nth-child(3) {
+    display: none;
+  }
+
+  .vitrini-problem,
+  .vitrini-features,
+  .vitrini-flow,
+  .vitrini-fit,
+  .vitrini-buy,
+  .vitrini-faq {
+    padding: 68px 0;
+  }
+
+  .vitrini-feature-grid article {
+    min-height: auto;
+  }
+
+  .vitrini-feature-grid h3 {
+    margin-top: 36px;
+  }
+
+  .vitrini-fit__list span:nth-child(even) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .vitrini-buy__card {
+    gap: 36px;
+    padding: 28px;
+  }
+
+  .vitrini-buy__checkout {
+    padding: 24px;
+  }
+
+  .vitrini-flow__steps li {
+    grid-template-columns: 54px 1fr;
+  }
+}

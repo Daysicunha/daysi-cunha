@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Briefing de implantação | Vitrini — Daysi Cunha</title>
+    <meta
+      name="description"
+      content="Briefing de implantação do Vitrini para clientes com pagamento confirmado."
+    />
+    <meta name="theme-color" content="#0A0A0A" />
+    <link rel="icon" href="assets/images/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/briefing-vitrini.css" />
+    <script src="assets/js/site-data.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body data-page="solucoes">
+    <div class="noise-bg" aria-hidden="true"></div>
+    <div data-site-header></div>
+
+    <main id="conteudo" class="briefing-page">
+      <section class="briefing-hero">
+        <div class="container briefing-hero__grid">
+          <div>
+            <p class="tag">// Vitrini • Implantação</p>
+            <h1>Agora eu preciso conhecer o seu negócio.</h1>
+            <p class="briefing-hero__lead">
+              Este briefing reúne as informações necessárias para personalizar
+              seu catálogo e preparar o seu acesso ao painel Vitrini.
+            </p>
+          </div>
+          <aside class="briefing-status" aria-label="Status do processo">
+            <span>ETAPA PÓS-COMPRA</span>
+            <strong>Briefing de implantação</strong>
+            <p>Preencha com calma. Quanto mais claras forem as informações, mais fiel será a configuração inicial.</p>
+            <div class="briefing-status__progress" aria-hidden="true"><i></i></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="briefing-body">
+        <div class="container briefing-layout">
+          <nav class="briefing-nav" aria-label="Seções do briefing">
+            <span>Seu briefing</span>
+            <a href="#responsavel">Responsável</a>
+            <a href="#negocio">Negócio</a>
+            <a href="#identidade">Identidade</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#estrutura">Estrutura</a>
+            <a href="#finalizacao">Finalização</a>
+          </nav>
+
+          <form class="briefing-form" data-vitrini-briefing>
+            <section class="briefing-section" id="responsavel">
+              <div class="briefing-section__head">
+                <span>01</span>
+                <div><p>Primeiro, você.</p><h2>Dados do responsável</h2></div>
+              </div>
+              <div class="briefing-fields briefing-fields--2">
+                <label class="briefing-field">
+                  <span>Nome completo *</span>
+                  <input type="text" name="responsavel_nome" autocomplete="name" required placeholder="Seu nome" />
+                </label>
+                <label class="briefing-field">
+                  <span>E-mail da compra *</span>
+                  <input type="email" name="responsavel_email" autocomplete="email" required placeholder="voce@exemplo.com" />
+                </label>
+                <label class="briefing-field">
+                  <span>WhatsApp *</span>
+                  <input type="tel" name="responsavel_whatsapp" autocomplete="tel" required placeholder="(31) 99999-9999" />
+                </label>
+                <label class="briefing-field">
+                  <span>Como prefere ser chamada(o)?</span>
+                  <input type="text" name="responsavel_apelido" placeholder="Nome ou apelido" />
+                </label>
+              </div>
+            </section>
+
+            <section class="briefing-section" id="negocio">
+              <div class="briefing-section__head">
+                <span>02</span>
+                <div><p>Sobre a marca.</p><h2>Seu negócio</h2></div>
+              </div>
+              <div class="briefing-fields briefing-fields--2">
+                <label class="briefing-field">
+                  <span>Nome da marca *</span>
+                  <input type="text" name="negocio_nome" required placeholder="Como o nome deve aparecer no catálogo" />
+                </label>
+                <label class="briefing-field">
+                  <span>Segmento *</span>
+                  <input type="text" name="negocio_segmento" required placeholder="Ex.: moda, cosméticos, confeitaria" />
+                </label>
+                <label class="briefing-field">
+                  <span>Cidade / Estado</span>
+                  <input type="text" name="negocio_local" placeholder="Ex.: Sabará / MG" />
+                </label>
+                <label class="briefing-field">
+                  <span>Instagram</span>
+                  <input type="text" name="negocio_instagram" placeholder="@suamarca" />
+                </label>
+              </div>
+              <label class="briefing-field">
+                <span>Conte um pouco sobre o negócio *</span>
+                <textarea name="negocio_descricao" rows="5" required placeholder="O que você vende, para quem vende e o que considera importante na sua marca."></textarea>
+              </label>
+            </section>
+
+            <section class="briefing-section" id="identidade">
+              <div class="briefing-section__head">
+                <span>03</span>
+                <div><p>Direção visual.</p><h2>Identidade da marca</h2></div>
+              </div>
+              <div class="briefing-upload-grid">
+                <label class="briefing-upload">
+                  <input type="file" name="logo" accept="image/png,image/jpeg,image/webp,image/svg+xml,.pdf" />
+                  <span class="briefing-upload__icon" aria-hidden="true">＋</span>
+                  <strong>Logo da marca</strong>
+                  <small>PNG, JPG, WEBP, SVG ou PDF</small>
+                </label>
+                <label class="briefing-upload">
+                  <input type="file" name="referencias" accept="image/png,image/jpeg,image/webp,.pdf" multiple />
+                  <span class="briefing-upload__icon" aria-hidden="true">＋</span>
+                  <strong>Referências visuais</strong>
+                  <small>Opcional — imagens ou PDF</small>
+                </label>
+              </div>
+              <div class="briefing-fields briefing-fields--2">
+                <label class="briefing-field">
+                  <span>Cores principais</span>
+                  <input type="text" name="identidade_cores" placeholder="Ex.: vinho, bege e branco" />
+                </label>
+                <label class="briefing-field">
+                  <span>Fonte ou tipografia, se houver</span>
+                  <input type="text" name="identidade_fontes" placeholder="Ex.: Montserrat" />
+                </label>
+              </div>
+              <label class="briefing-field">
+                <span>Como você quer que a marca seja percebida?</span>
+                <textarea name="identidade_percepcao" rows="4" placeholder="Ex.: sofisticada, leve, contemporânea, artesanal, premium..."></textarea>
+              </label>
+            </section>
+
+            <section class="briefing-section" id="catalogo">
+              <div class="briefing-section__head">
+                <span>04</span>
+                <div><p>O coração do Vitrini.</p><h2>Seu catálogo</h2></div>
+              </div>
+              <div class="briefing-fields briefing-fields--2">
+                <label class="briefing-field">
+                  <span>Quantos produtos você pretende cadastrar inicialmente?</span>
+                  <select name="catalogo_quantidade">
+                    <option value="">Selecione</option>
+                    <option>Até 10</option>
+                    <option>11 a 30</option>
+                    <option>31 a 60</option>
+                    <option>Mais de 60</option>
+                  </select>
+                </label>
+                <label class="briefing-field">
+                  <span>Como o cliente faz o pedido hoje?</span>
+                  <select name="catalogo_pedido">
+                    <option value="">Selecione</option>
+                    <option>WhatsApp</option>
+                    <option>Instagram / Direct</option>
+                    <option>Loja física</option>
+                    <option>Outro canal</option>
+                  </select>
+                </label>
+              </div>
+              <label class="briefing-field">
+                <span>Quais categorias você quer no catálogo?</span>
+                <textarea name="catalogo_categorias" rows="4" placeholder="Ex.: vestidos, conjuntos, acessórios, novidades..."></textarea>
+              </label>
+              <label class="briefing-field">
+                <span>Quais informações precisam aparecer em cada produto?</span>
+                <textarea name="catalogo_campos" rows="4" placeholder="Ex.: nome, preço, tamanhos, cores disponíveis, descrição, código do produto..."></textarea>
+              </label>
+              <div class="briefing-upload briefing-upload--wide">
+                <label>
+                  <input type="file" name="materiais_produtos" accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.csv,.zip" multiple />
+                  <span class="briefing-upload__icon" aria-hidden="true">＋</span>
+                  <strong>Materiais dos produtos</strong>
+                  <small>Fotos, planilha, PDF ou arquivo compactado. Você também poderá enviar um link abaixo.</small>
+                </label>
+              </div>
+              <label class="briefing-field">
+                <span>Link para pasta com fotos ou informações</span>
+                <input type="url" name="catalogo_link" placeholder="Google Drive, Dropbox ou outro link" />
+              </label>
+            </section>
+
+            <section class="briefing-section" id="estrutura">
+              <div class="briefing-section__head">
+                <span>05</span>
+                <div><p>Endereço e contato.</p><h2>Estrutura do Vitrini</h2></div>
+              </div>
+              <fieldset class="briefing-choice">
+                <legend>Você já possui um domínio?</legend>
+                <label><input type="radio" name="dominio_status" value="sim" /><span>Sim, já tenho</span></label>
+                <label><input type="radio" name="dominio_status" value="nao" /><span>Não tenho</span></label>
+                <label><input type="radio" name="dominio_status" value="nao_sei" /><span>Não sei o que escolher</span></label>
+              </fieldset>
+              <div class="briefing-fields briefing-fields--2">
+                <label class="briefing-field">
+                  <span>Domínio atual ou desejado</span>
+                  <input type="text" name="dominio_nome" placeholder="Ex.: suamarca.com.br" />
+                </label>
+                <label class="briefing-field">
+                  <span>WhatsApp que aparecerá no catálogo *</span>
+                  <input type="tel" name="catalogo_whatsapp" required placeholder="(31) 99999-9999" />
+                </label>
+              </div>
+              <label class="briefing-field">
+                <span>Outros links que devem aparecer</span>
+                <textarea name="estrutura_links" rows="3" placeholder="Instagram, endereço, site, link de pagamento ou outros canais."></textarea>
+              </label>
+            </section>
+
+            <section class="briefing-section" id="finalizacao">
+              <div class="briefing-section__head">
+                <span>06</span>
+                <div><p>Últimos detalhes.</p><h2>Finalização</h2></div>
+              </div>
+              <label class="briefing-field">
+                <span>Existe alguma informação importante que ainda não perguntamos?</span>
+                <textarea name="observacoes" rows="6" placeholder="Use este espaço para observações, particularidades do negócio ou pedidos específicos."></textarea>
+              </label>
+              <label class="briefing-consent">
+                <input type="checkbox" name="confirmacao" required />
+                <span>Confirmo que revisei as informações acima e que os materiais enviados podem ser utilizados na implantação do meu Vitrini.</span>
+              </label>
+
+              <div class="briefing-submit">
+                <div>
+                  <span>Pronto para enviar?</span>
+                  <p>Na versão final, o envio ficará vinculado ao seu pedido e ao pagamento confirmado.</p>
+                </div>
+                <button class="button button--primary" type="submit" disabled data-briefing-submit>
+                  Enviar briefing <span aria-hidden="true">→</span>
+                </button>
+              </div>
+              <p class="briefing-preview-note">Prévia visual: o envio está desativado até a integração segura com a Central de Vendas.</p>
+            </section>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <div data-site-footer></div>
+  </body>
+</html>
