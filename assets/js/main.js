@@ -80,7 +80,7 @@
       band.setAttribute("aria-label", "Faça o Bem");
       band.innerHTML = `
         <div class="container good-band__inner">
-          <strong class="good-band__label">${campaign.label || "FAÇA O BEM"}</strong>
+          <a class="good-band__label" href="${root}faca-o-bem.html" aria-label="Conhecer a iniciativa Faça o Bem">${campaign.label || "FAÇA O BEM"}</a>
           <span class="good-band__separator" aria-hidden="true">•</span>
           <span class="good-band__message">${campaign.message || "Conheça a iniciativa em destaque."}</span>
           ${campaign.period ? `<span class="good-band__separator good-band__separator--period" aria-hidden="true">•</span><span class="good-band__period">${campaign.period}</span>` : ""}
