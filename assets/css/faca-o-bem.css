@@ -22,7 +22,18 @@
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.14em;
+  text-decoration: none;
   white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.good-band__label:hover {
+  color: var(--text);
+}
+
+.good-band__label:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
 }
 
 .good-band__separator {
