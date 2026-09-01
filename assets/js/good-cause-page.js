@@ -14,7 +14,7 @@
       const link = target.querySelector("[data-good-link]");
 
       if (title) title.textContent = campaign.institution || "Campanha em seleção";
-      if (message) message.textContent = campaign.message || "";
+      if (message) message.textContent = campaign.pageMessage || campaign.message || "";
       if (period) period.textContent = campaign.period || "";
 
       if (!link) return;
@@ -38,7 +38,7 @@
       const message = target.querySelector("[data-good-message]");
       const link = target.querySelector("[data-good-link]");
       if (title) title.textContent = "Campanha em seleção";
-      if (message) message.textContent = "A primeira instituição apoiada será anunciada em breve.";
+      if (message) message.textContent = "A instituição apoiada será anunciada em breve.";
       if (link) link.hidden = true;
     });
 })();
