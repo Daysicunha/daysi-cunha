@@ -571,7 +571,7 @@ button { font: inherit; }
 @media (max-width: 767px) {
   :root { --gutter: 20px; }
   .v2-header__inner { min-height: 68px; }
-  .v2-nav.is-open { inset-top: 68px; }
+  .v2-nav.is-open { top: 68px; }
   .v2-hero__grid { display: flex; flex-direction: column; align-items: stretch; }
   .v2-hero__copy { order: 1; padding: 68px 0 42px; }
   .v2-hero__media { order: 2; min-height: 0; height: 62svh; margin-inline: calc(var(--gutter) * -1); }
