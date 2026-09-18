@@ -252,9 +252,11 @@ button { font: inherit; }
   pointer-events: none;
 }
 .v2-hero__media img {
-  width: auto;
-  max-width: min(100%, 430px);
-  height: 100%;
+  width: min(100%, 350px);
+  max-width: 350px;
+  height: auto;
+  max-height: 92%;
+  margin-top: auto;
   object-fit: contain;
   object-position: center bottom;
   position: relative;
@@ -619,14 +621,14 @@ button { font: inherit; }
     border-left: 0;
   }
   .v2-hero__media img {
-    width: min(100%, 350px);
-    max-width: 350px;
+    width: min(100%, 190px);
+    max-width: 190px;
     height: auto;
     max-height: 72svh;
     margin-top: auto;
     object-fit: contain;
     object-position: right bottom;
-    transform: translateX(5%);
+    transform: translateX(4%);
   }
   .v2-hero .v2-eyebrow {
     margin-bottom: 14px;
@@ -695,6 +697,33 @@ button { font: inherit; }
   .v2-cta__grid { min-height: 500px; }
   .v2-footer__main { gap: 34px; }
   .v2-footer__bottom { flex-direction: column; }
+}
+
+@media (max-width: 390px) {
+  .v2-hero__copy {
+    grid-column: 1 / span 8;
+    padding-right: 8px;
+  }
+  .v2-hero__media {
+    grid-column: 7 / -1;
+  }
+  .v2-display {
+    max-width: 8.1ch;
+    font-size: clamp(1.72rem, 7.9vw, 2.15rem);
+  }
+  .v2-hero__copy .v2-lead {
+    max-width: 24ch;
+    font-size: .72rem;
+  }
+  .v2-hero .v2-button {
+    min-height: 42px;
+    padding-inline: 11px;
+    font-size: .66rem;
+  }
+  .v2-hero__media img {
+    width: min(100%, 175px);
+    max-width: 175px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
