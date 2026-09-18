@@ -6,180 +6,391 @@
     <title>Daysi Cunha | Presença Digital Estratégica</title>
     <meta
       name="description"
-      content="Landing pages e sites institucionais estratégicos para pequenos negócios que precisam comunicar valor, transmitir confiança e crescer com estrutura."
+      content="Estratégia, design e tecnologia para construir sites, páginas e experiências digitais com intenção, clareza e presença."
     />
-    <meta name="theme-color" content="#0A0A0A" />
+    <meta name="theme-color" content="#F4F1EB" />
     <link rel="canonical" href="https://daysicunha.com.br/" />
     <link rel="icon" href="assets/images/favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
     <link rel="manifest" href="site.webmanifest" />
+
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Daysi Cunha" />
     <meta property="og:title" content="Daysi Cunha | Presença Digital Estratégica" />
-    <meta property="og:description" content="Landing pages e sites institucionais estratégicos para pequenos negócios que precisam comunicar valor e transmitir confiança." />
+    <meta property="og:description" content="Estratégia, design e tecnologia para construir presença digital com intenção." />
     <meta property="og:url" content="https://daysicunha.com.br/" />
     <meta property="og:image" content="https://daysicunha.com.br/assets/images/og-daysi-cunha.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Daysi Cunha desenvolvendo um projeto em seu escritório" />
+    <meta property="og:image:alt" content="Daysi Cunha — Presença Digital Estratégica" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Daysi Cunha | Presença Digital Estratégica" />
-    <meta name="twitter:description" content="Landing pages e sites institucionais estratégicos para pequenos negócios que precisam comunicar valor e transmitir confiança." />
+    <meta name="twitter:description" content="Estratégia, design e tecnologia para construir presença digital com intenção." />
     <meta name="twitter:image" content="https://daysicunha.com.br/assets/images/og-daysi-cunha.jpg" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/home-vitrini.css?v=20260901-1" />
-    <script src="assets/js/site-data.js" defer></script>
-    <script src="assets/js/main.js?v=20260901-2" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/home-v2.css" />
+    <script src="assets/js/home-v2.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://daysicunha.com.br/#daysi",
+            "name": "Daysi Cunha",
+            "url": "https://daysicunha.com.br/",
+            "jobTitle": "Presença Digital Estratégica",
+            "sameAs": [
+              "https://www.instagram.com/daysicunha/",
+              "https://www.linkedin.com/in/daysicunha/",
+              "https://github.com/Daysicunha"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://daysicunha.com.br/#website",
+            "url": "https://daysicunha.com.br/",
+            "name": "Daysi Cunha",
+            "inLanguage": "pt-BR",
+            "publisher": { "@id": "https://daysicunha.com.br/#daysi" }
+          }
+        ]
+      }
+    </script>
   </head>
-  <body data-page="inicio">
-    <div class="noise-bg" aria-hidden="true"></div>
-    <div data-site-header></div>
+
+  <body data-ui="v2">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="v2-header" data-v2-header>
+      <div class="v2-container v2-header__inner">
+        <a class="v2-brand" href="index.html" aria-label="Daysi Cunha — página inicial">
+          <span>DAYSI</span><span>CUNHA</span>
+        </a>
+
+        <nav class="v2-nav" data-v2-nav aria-label="Navegação principal">
+          <a href="cases.html">Projetos</a>
+          <a href="solucoes.html">Soluções</a>
+          <a href="processo.html">Processo</a>
+          <a href="sobre.html">Sobre</a>
+          <a href="blog.html">Conteúdo</a>
+        </nav>
+
+        <a class="v2-button v2-button--primary v2-header__cta" href="contato.html">
+          Vamos conversar <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <button
+          class="v2-menu-toggle"
+          type="button"
+          data-v2-menu-toggle
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="v2-mobile-nav"
+        >
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
     <main id="conteudo">
-      <section class="hero hero-editorial">
-        <div class="hero-bg-interativa" aria-hidden="true"></div>
-        <figure class="hero-portrait">
-          <img src="assets/images/daysi-cunha-hero.webp" width="1672" height="941" fetchpriority="high" alt="Daysi Cunha desenvolvendo um projeto em seu escritório" />
-        </figure>
-        <div class="container hero-content">
-          <div class="hero-left">
-            <p class="tag">// Presença Digital Estratégica</p>
-            <h1>Sites profissionais que fortalecem sua marca.</h1>
-            <p class="subtitle">Estratégia, design e tecnologia conduzidos com clareza e proximidade para transformar o valor do seu negócio em uma experiência digital profissional.</p>
-            <div class="button-row">
-              <a class="button button--primary" href="contato.html">Solicitar diagnóstico <span aria-hidden="true">↗</span></a>
-              <a class="button" href="cases.html">Conhecer projetos</a>
+      <section class="v2-hero">
+        <div class="v2-container v2-hero__grid">
+          <div class="v2-hero__copy">
+            <p class="v2-eyebrow" data-reveal>// Presença Digital Estratégica</p>
+            <h1 class="v2-display" data-reveal>
+              Estratégia, design e tecnologia para construir uma presença que faça sentido.
+            </h1>
+            <p class="v2-lead" data-reveal>
+              Sites, páginas e experiências digitais construídas com intenção — da estratégia à implementação.
+            </p>
+            <div class="v2-actions" data-reveal>
+              <a class="v2-button v2-button--primary" href="cases.html">
+                Conhecer projetos <span class="arrow" aria-hidden="true">→</span>
+              </a>
+              <a class="v2-button" href="contato.html">
+                Vamos conversar <span class="arrow" aria-hidden="true">↗</span>
+              </a>
             </div>
+
+            <div class="v2-hero__notes" data-reveal>
+              <div class="v2-hero__note"><strong>Projetos reais</strong><span>que transformam contexto em experiência</span></div>
+              <div class="v2-hero__note"><strong>Soluções sob medida</strong><span>para necessidades diferentes</span></div>
+              <div class="v2-hero__note"><strong>Estratégia em cada etapa</strong><span>da ideia à publicação</span></div>
+            </div>
+          </div>
+
+          <figure class="v2-hero__media" data-reveal="media">
+            <!-- Substituir pela fotografia editorial oficial do ensaio 2.0 quando estiver pronta. -->
+            <img
+              src="assets/images/daysi-cunha-hero.webp"
+              width="1672"
+              height="941"
+              fetchpriority="high"
+              alt="Daysi Cunha em seu ambiente de trabalho"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section class="v2-section--compact">
+        <div class="v2-container v2-manifesto__grid">
+          <div data-reveal>
+            <p class="v2-eyebrow">// Como eu penso</p>
+            <h2 class="v2-heading">Mais do que estar no digital.</h2>
+          </div>
+          <div class="v2-manifesto__statement" data-reveal>
+            <p>Entender antes de construir.</p>
+            <p>Criar com intenção.</p>
+            <p>Usar tecnologia para resolver.</p>
+          </div>
+          <div class="v2-manifesto__copy" data-reveal>
+            <p>
+              Uma boa presença digital não começa pelo layout. Começa entendendo o negócio,
+              as pessoas e aquilo que precisa acontecer depois que alguém chega até ali.
+            </p>
+            <p class="v2-meta">Estratégia / Design / Tecnologia</p>
           </div>
         </div>
       </section>
 
-      <section class="social-proof-ticker" aria-label="Princípios do trabalho">
-        <div class="ticker-track">
-          <span>ESTRATÉGIA DIGITAL</span><b>•</b><span>DESIGN COM INTENÇÃO</span><b>•</b><span>EXPERIÊNCIA DO USUÁRIO</span><b>•</b><span>PERFORMANCE E CLAREZA</span><b>•</b><span>ESTRATÉGIA DIGITAL</span><b>•</b><span>DESIGN COM INTENÇÃO</span><b>•</b><span>EXPERIÊNCIA DO USUÁRIO</span><b>•</b><span>PERFORMANCE E CLAREZA</span><b>•</b>
+      <section class="v2-section v2-dark" aria-labelledby="projetos-title">
+        <div class="v2-container">
+          <div class="v2-projects__header">
+            <div data-reveal>
+              <p class="v2-eyebrow">// Projetos selecionados</p>
+              <h2 class="v2-heading" id="projetos-title">O trabalho precisa falar antes da explicação.</h2>
+            </div>
+            <p class="v2-lead" data-reveal>
+              Uma seleção de projetos em que estratégia, interface e desenvolvimento trabalham para resolver necessidades reais.
+            </p>
+          </div>
+
+          <div class="v2-projects__grid">
+            <article class="v2-project v2-project--featured" data-reveal>
+              <a class="v2-project__visual" href="cases/tornearia-barbosa.html">
+                <img
+                  src="assets/images/tornearia-barbosa-case.webp"
+                  width="941"
+                  height="1672"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Apresentação do site institucional da Tornearia Barbosa"
+                />
+              </a>
+              <div class="v2-project__body">
+                <span class="v2-project__index">01 / SITE INSTITUCIONAL · SEO LOCAL</span>
+                <h3>Tornearia Barbosa</h3>
+                <p>Mais de 35 anos de experiência traduzidos em uma presença digital própria e profissional.</p>
+                <a class="v2-project__link" href="cases/tornearia-barbosa.html">Ver estudo de caso <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+
+            <article class="v2-project" data-reveal>
+              <a class="v2-project__visual" href="vitrini.html" aria-label="Conhecer o VITRINI">
+                <div class="v2-ui-visual" aria-hidden="true">
+                  <div class="v2-ui-window">
+                    <div class="v2-ui-window__bar"><i></i><i></i><i></i></div>
+                    <div class="v2-ui-window__content">
+                      <small>VITRINI / CATÁLOGO DIGITAL</small>
+                      <strong>Escolha. Descubra. Peça.</strong>
+                      <div class="v2-ui-cards"><span class="v2-ui-card"></span><span class="v2-ui-card"></span><span class="v2-ui-card"></span></div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div class="v2-project__body">
+                <span class="v2-project__index">02 / PRODUTO DIGITAL</span>
+                <h3>VITRINI</h3>
+                <p>Uma vitrine organizada para o cliente e controle para quem administra.</p>
+                <a class="v2-project__link" href="vitrini.html">Conhecer o produto <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+
+            <article class="v2-project" data-reveal>
+              <div class="v2-project__visual" aria-label="Conceito visual do ENGRENI Agenda">
+                <div class="v2-ui-visual" aria-hidden="true">
+                  <div class="v2-ui-window">
+                    <div class="v2-ui-window__bar"><i></i><i></i><i></i></div>
+                    <div class="v2-ui-window__content">
+                      <small>ENGRENI AGENDA / FLUXO</small>
+                      <strong>Hoje · 4 agendamentos</strong>
+                      <div class="v2-ui-cards"><span class="v2-ui-card"></span><span class="v2-ui-card"></span><span class="v2-ui-card"></span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="v2-project__body">
+                <span class="v2-project__index">03 / EXPERIÊNCIA · AGENDAMENTO</span>
+                <h3>ENGRENI Agenda</h3>
+                <p>Um fluxo simples para reduzir mensagens, conflitos de horário e esforço operacional.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="v2-actions" data-reveal>
+            <a class="v2-button v2-button--primary" href="cases.html">Ver todos os projetos <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
         </div>
       </section>
 
-      <section class="home-vitrini" aria-labelledby="home-vitrini-title">
-        <div class="container home-vitrini__grid">
-          <div class="home-vitrini__copy">
-            <p class="home-vitrini__eyebrow">// Produto em destaque • Vitrini</p>
-            <h2 id="home-vitrini-title">Seu catálogo.<br />Sua vitrine.<br /><span>Seu controle.</span></h2>
-            <p class="home-vitrini__lead">Um catálogo digital profissional para apresentar seus produtos em um único link — com um painel para você atualizar fotos, preços, descrições e categorias quando quiser.</p>
-            <ul class="home-vitrini__meta" aria-label="Recursos do Vitrini">
-              <li>Catálogo responsivo</li>
-              <li>Painel administrativo</li>
-              <li>Gestão feita por você</li>
-            </ul>
-            <div class="button-row">
-              <a class="button button--primary" href="vitrini.html">Conhecer o Vitrini <span aria-hidden="true">→</span></a>
-              <a class="button" href="vitrini.html#como-funciona">Ver como funciona</a>
+      <section class="v2-section" aria-labelledby="solucoes-title">
+        <div class="v2-container">
+          <div class="v2-solutions__top">
+            <div data-reveal>
+              <p class="v2-eyebrow">// Soluções</p>
+              <h2 class="v2-heading" id="solucoes-title">O que precisa ser construído depende do que precisa ser resolvido.</h2>
             </div>
+            <p class="v2-solutions__intro" data-reveal>
+              O formato vem depois da necessidade. Cada frente organiza uma maneira diferente de transformar contexto em presença digital.
+            </p>
           </div>
 
-          <div class="home-vitrini__visual" aria-label="Demonstração visual do catálogo e painel Vitrini">
-            <div class="home-vitrini__catalog">
-              <div class="home-vitrini__catalog-head"><strong>SUA MARCA</strong><span>CATÁLOGO · CONTATO</span></div>
-              <div class="home-vitrini__catalog-title">Produtos organizados em uma vitrine só sua.</div>
-              <div class="home-vitrini__filters"><span>Todos</span><span>Categoria 01</span><span>Categoria 02</span></div>
-              <div class="home-vitrini__products">
-                <article class="home-vitrini__product"><div class="home-vitrini__photo"></div><small>DESTAQUE</small><strong>Produto 01</strong></article>
-                <article class="home-vitrini__product"><div class="home-vitrini__photo"></div><small>NOVIDADE</small><strong>Produto 02</strong></article>
-                <article class="home-vitrini__product"><div class="home-vitrini__photo"></div><small>COLEÇÃO</small><strong>Produto 03</strong></article>
+          <div class="v2-solutions__grid">
+            <article class="v2-solution" data-reveal>
+              <div class="v2-solution__icon" aria-hidden="true">□</div>
+              <h3>Presença</h3>
+              <p>Sites, páginas e estruturas digitais para marcas que precisam comunicar melhor, organizar sua presença e criar um endereço próprio.</p>
+              <a class="v2-text-link" href="solucoes.html#site-completo">Explorar presença <span aria-hidden="true">→</span></a>
+            </article>
+
+            <article class="v2-solution" data-reveal>
+              <div class="v2-solution__icon" aria-hidden="true">⌗</div>
+              <h3>Vitrine</h3>
+              <p>Soluções para apresentar produtos, serviços e caminhos de contato de maneira mais organizada e profissional.</p>
+              <a class="v2-text-link" href="vitrini.html">Explorar vitrines <span aria-hidden="true">→</span></a>
+            </article>
+
+            <article class="v2-solution" data-reveal>
+              <div class="v2-solution__icon" aria-hidden="true">◇</div>
+              <h3>Experiência</h3>
+              <p>Interfaces e projetos digitais desenvolvidos a partir de necessidades que não cabem em uma solução pronta.</p>
+              <a class="v2-text-link" href="contato.html">Conversar sobre uma ideia <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="v2-section v2-product" aria-labelledby="vitrini-title">
+        <div class="v2-container v2-product__grid">
+          <div class="v2-product__visual" data-reveal="media" aria-label="Representação da interface do VITRINI">
+            <div class="v2-device" aria-hidden="true">
+              <div class="v2-device__screen">
+                <div class="v2-device__head"><strong>SUA MARCA</strong><span>CATÁLOGO · CONTATO</span></div>
+                <h4>Produtos organizados em uma vitrine só sua.</h4>
+                <div class="v2-device__products"><span></span><span></span><span></span></div>
               </div>
             </div>
-            <div class="home-vitrini__panel">
-              <small>PAINEL VITRINI</small>
-              <strong>Você atualiza. A vitrine acompanha.</strong>
-              <div class="home-vitrini__panel-row"><span>Produto 01</span><b>Editar</b></div>
-              <div class="home-vitrini__panel-row"><span>Produto 02</span><b>Editar</b></div>
-              <div class="home-vitrini__panel-row"><span>Produto 03</span><b>Editar</b></div>
+          </div>
+
+          <div data-reveal>
+            <p class="v2-eyebrow">// Produto digital</p>
+            <h2 class="v2-product__title" id="vitrini-title">VITRINI</h2>
+            <p class="v2-product__tagline">Seu catálogo. Sua vitrine. Seu controle.</p>
+            <p class="v2-lead">
+              Um catálogo digital autogerenciável para organizar aquilo que seu negócio precisa apresentar — com uma vitrine profissional para o cliente e controle para quem administra.
+            </p>
+            <ul class="v2-product__benefits">
+              <li>Catálogo personalizado</li>
+              <li>Gestão de produtos e categorias</li>
+              <li>Atualizações feitas por você</li>
+            </ul>
+            <a class="v2-button v2-button--primary" href="vitrini.html">Conhecer o VITRINI <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="v2-section" aria-labelledby="processo-title">
+        <div class="v2-container">
+          <div class="v2-process__header">
+            <div data-reveal>
+              <p class="v2-eyebrow">// Processo</p>
+              <h2 class="v2-heading" id="processo-title">Uma boa entrega começa muito antes do código.</h2>
             </div>
+            <p class="v2-lead" data-reveal>
+              Clareza antes do layout. Estratégia antes do código. Cada etapa reduz incerteza e aproxima o projeto do que ele realmente precisa resolver.
+            </p>
+          </div>
+
+          <div class="v2-process__steps">
+            <article class="v2-step" data-reveal><span class="v2-step__number">01</span><h3>Entender</h3><p>Contexto, objetivo, público e problema.</p></article>
+            <article class="v2-step" data-reveal><span class="v2-step__number">02</span><h3>Estruturar</h3><p>Conteúdo, fluxo e arquitetura.</p></article>
+            <article class="v2-step" data-reveal><span class="v2-step__number">03</span><h3>Criar</h3><p>Direção visual e experiência.</p></article>
+            <article class="v2-step" data-reveal><span class="v2-step__number">04</span><h3>Desenvolver</h3><p>Interface, responsividade e tecnologia.</p></article>
+            <article class="v2-step" data-reveal><span class="v2-step__number">05</span><h3>Validar + entregar</h3><p>Testes, ajustes e publicação.</p></article>
+          </div>
+
+          <div class="v2-actions" data-reveal>
+            <a class="v2-button" href="processo.html">Conhecer meu processo <span class="arrow" aria-hidden="true">→</span></a>
           </div>
         </div>
       </section>
 
-      <section class="value">
-        <div class="container">
-          <div class="value-header">
-            <p class="tag">// Fundamentos</p>
-            <h2>A base de cada projeto</h2>
-            <p>Mais do que um site. Uma estrutura digital pensada para posicionar, comunicar e facilitar decisões.</p>
-          </div>
-          <div class="value-grid">
-            <article class="value-item"><span class="value-line"></span><h3>Estratégia</h3><p>Estruturação inteligente para criar interfaces organizadas, intuitivas e escaláveis.</p></article>
-            <article class="value-item"><span class="value-line"></span><h3>Design</h3><p>UI moderna com foco em clareza visual, experiência e responsividade.</p></article>
-            <article class="value-item"><span class="value-line"></span><h3>Desenvolvimento</h3><p>Código limpo e otimizado para uma presença digital rápida e consistente.</p></article>
-            <article class="value-item"><span class="value-line"></span><h3>Conversão</h3><p>Fluxos pensados para reduzir dúvidas e tornar o próximo passo mais simples.</p></article>
+      <section class="v2-section v2-product" aria-labelledby="sobre-home-title">
+        <div class="v2-container v2-about__grid">
+          <figure class="v2-about__media" data-reveal="media">
+            <!-- Temporário: será substituído por uma segunda fotografia do ensaio 2.0. -->
+            <img src="assets/images/daysi-cunha-hero.webp" width="1672" height="941" loading="lazy" decoding="async" alt="Daysi Cunha" />
+          </figure>
+
+          <div class="v2-about__copy" data-reveal>
+            <p class="v2-eyebrow">// Por trás dos projetos</p>
+            <h2 class="v2-heading" id="sobre-home-title">Estratégia para entender. Design para comunicar. Tecnologia para construir.</h2>
+            <p class="v2-lead">
+              Sou Daysi Cunha. Trabalho na interseção entre comunicação, design e desenvolvimento para transformar necessidades em experiências digitais mais claras, úteis e intencionais.
+            </p>
+            <a class="v2-button" href="sobre.html">Conhecer minha trajetória <span class="arrow" aria-hidden="true">→</span></a>
+            <blockquote class="v2-about__quote">“Tecnologia faz sentido quando aproxima pessoas daquilo que importa.”</blockquote>
           </div>
         </div>
       </section>
 
-      <section class="featured-case" aria-labelledby="featured-case-title">
-        <div class="container featured-case__grid">
-          <a class="featured-case__visual" href="cases/tornearia-barbosa.html" aria-label="Conhecer o case Tornearia Barbosa">
-            <img src="assets/images/tornearia-barbosa-case.webp" width="941" height="1672" loading="lazy" decoding="async" alt="Mockup responsivo do site institucional da Tornearia Barbosa" />
-          </a>
-          <div class="featured-case__content">
-            <p class="tag">// Case em destaque</p>
-            <p class="case-kicker">Site Institucional • SEO Local • Front-end</p>
-            <h2 id="featured-case-title">Da oficina para um endereço próprio no digital.</h2>
-            <p>O site da Tornearia Barbosa transformou mais de 35 anos de experiência em uma presença profissional, clara e preparada para ser encontrada por quem procura serviços de tornearia em Sabará.</p>
-            <ul class="case-tags" aria-label="Tecnologias e especialidades"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>SEO Local</li></ul>
-            <div class="button-row">
-              <a class="button button--primary" href="cases/tornearia-barbosa.html">Ver estudo de caso <span aria-hidden="true">→</span></a>
-              <a class="button" href="https://tornearia-barbosa.vercel.app/" target="_blank" rel="noopener noreferrer">Visitar projeto <span aria-hidden="true">↗</span></a>
-            </div>
+      <section class="v2-section v2-dark">
+        <div class="v2-container v2-cta__grid">
+          <div data-reveal>
+            <p class="v2-eyebrow">// Próximo passo</p>
+            <h2 class="v2-heading">Tem alguma coisa que seu negócio precisa construir no digital?</h2>
           </div>
-        </div>
-      </section>
-
-      <section class="home-journal" aria-labelledby="home-journal-title">
-        <div class="container">
-          <div class="home-journal__header">
-            <div><p class="tag">// Conteúdos</p><h2 id="home-journal-title">Estratégia para além do layout.</h2></div>
-            <a class="button" href="blog.html">Ver todos os artigos</a>
-          </div>
-          <a class="home-journal__feature" href="blog/presenca-digital-estrategica.html">
-            <div>
-              <p class="eyebrow">Artigo em destaque</p>
-              <h3>Presença digital estratégica: o que é e por que sua empresa precisa dela</h3>
-              <p>Entenda como organizar seus canais, transmitir mais confiança e transformar sua comunicação em uma ferramenta de crescimento.</p>
-              <span class="home-journal__link">Ler artigo <b aria-hidden="true">→</b></span>
-            </div>
-            <div class="home-journal__index" aria-hidden="true"><span>01</span><strong>Presença<br />digital</strong></div>
-          </a>
-        </div>
-      </section>
-
-      <section class="faq" aria-labelledby="faq-title">
-        <div class="container faq__layout">
-          <div class="faq__intro">
-            <p class="tag">// Perguntas frequentes</p>
-            <h2 id="faq-title">Tudo o que você precisa saber antes de começar.</h2>
-            <p>Se a sua dúvida não estiver aqui, use o diagnóstico inicial para contar o que o seu negócio precisa.</p>
-          </div>
-          <div class="faq__items">
-            <details><summary>Qual é a diferença entre Landing Page e Site Institucional?</summary><p>A Landing Page concentra uma oferta em uma única página, com até seis seções e foco em conversão. O Site Institucional organiza marca, serviços e conteúdos em até oito páginas.</p></details>
-            <details><summary>O texto e o formulário fazem parte do projeto?</summary><p>Sim. A Landing Page inclui copy estruturada e formulário. Nos sites completos, a estrutura é preparada para integrações e pode incluir blog ou CMS conforme o escopo definido.</p></details>
-            <details><summary>Domínio e hospedagem estão inclusos?</summary><p>Não. Domínio e hospedagem são contratados à parte, para que permaneçam sob propriedade do seu negócio.</p></details>
-            <details><summary>Qual é o prazo de entrega?</summary><p>Landing Pages têm prazo de até 10 dias úteis. Sites completos, de até 20 dias úteis, contando a partir do recebimento dos materiais necessários e da confirmação do briefing.</p></details>
-            <details><summary>Quantas rodadas de ajustes estão incluídas?</summary><p>Cada projeto inclui até três rodadas de ajustes, para refinar a entrega sem perder clareza de escopo e prazo.</p></details>
-            <details><summary>Como começo um projeto?</summary><p>Clique em “Solicitar diagnóstico” e conte brevemente sobre o seu negócio, objetivo e prazo. As informações organizam a análise inicial e seguem para a conversa no WhatsApp.</p></details>
-          </div>
-        </div>
-      </section>
-
-      <section class="home-bridge">
-        <div class="container home-bridge-grid">
-          <div><p class="tag">// Próximo passo</p><h2>Uma presença digital não precisa parecer pequena.</h2></div>
-          <div>
-            <p>Conheça as soluções, explore o case da Tornearia Barbosa e conte o que seu negócio precisa comunicar nesta próxima fase.</p>
-            <div class="button-row"><a class="button" href="solucoes.html">Conhecer soluções</a><a class="button button--primary" href="contato.html">Solicitar diagnóstico</a></div>
+          <div class="v2-cta__side" data-reveal>
+            <p>Conte um pouco do cenário. Você não precisa chegar sabendo qual tecnologia contratar.</p>
+            <a class="v2-button v2-button--primary" href="contato.html">Vamos conversar <span class="arrow" aria-hidden="true">↗</span></a>
           </div>
         </div>
       </section>
     </main>
-    <div data-site-footer></div>
+
+    <footer class="v2-footer">
+      <div class="v2-container v2-footer__main">
+        <div class="v2-footer__brand">
+          <a class="v2-brand" href="index.html"><span>DAYSI</span><span>CUNHA</span></a>
+          <p>Presença Digital Estratégica — estratégia, design e tecnologia trabalhando na mesma direção.</p>
+        </div>
+
+        <nav class="v2-footer__links" aria-label="Navegação do rodapé">
+          <a href="cases.html">Projetos</a>
+          <a href="solucoes.html">Soluções</a>
+          <a href="processo.html">Processo</a>
+          <a href="sobre.html">Sobre</a>
+          <a href="blog.html">Conteúdo</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+
+        <div class="v2-footer__social">
+          <a href="https://www.instagram.com/daysicunha/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+          <a href="https://www.linkedin.com/in/daysicunha/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="https://github.com/Daysicunha" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="v2-container v2-footer__bottom">
+        <span>Sabará · MG / Brasil</span>
+        <span>© 2026 Daysi Cunha</span>
+      </div>
+    </footer>
   </body>
 </html>
