@@ -34,7 +34,7 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Desenvolvedora web · Portfólio autoral</p>
-          <h1 id="hero-titulo">Tecnologia com <em>autoria</em> em cada projeto.</h1>
+          <h1 id="hero-titulo">Tecnologia com <em class="hero-word-motion"><span>autoria</span></em> em cada projeto.</h1>
           <p class="intro">Sou Daysi Cunha, desenvolvedora web e criadora de produtos digitais. Aqui compartilho projetos, decisões de desenvolvimento e o que sigo aprendendo sobre tecnologia.</p>
           <div class="actions">
             <a href="#projetos" class="btn">Explorar projetos <span aria-hidden="true">↗</span></a>
@@ -51,17 +51,20 @@
       </div>
     </section>
     <div class="ticker" aria-label="Áreas de atuação">
-      <div class="container ticker-inner"><span>Front-end</span><i aria-hidden="true">✳</i><span>Experiências digitais</span><i aria-hidden="true">✳</i><span>Produtos digitais</span><i aria-hidden="true">✳</i><span>Aprendizado contínuo</span></div>
+      <div class="ticker-viewport"><div class="ticker-track">
+        <div class="ticker-inner ticker-set"><span>Front-end</span><i aria-hidden="true">✳</i><span>Experiências digitais</span><i aria-hidden="true">✳</i><span>Produtos digitais</span><i aria-hidden="true">✳</i><span>Aprendizado contínuo</span></div>
+        <div class="ticker-inner ticker-set" aria-hidden="true"><span>Front-end</span><i aria-hidden="true">✳</i><span>Experiências digitais</span><i aria-hidden="true">✳</i><span>Produtos digitais</span><i aria-hidden="true">✳</i><span>Aprendizado contínuo</span></div>
+      </div></div>
     </div>
 
     <section class="section" id="projetos" aria-labelledby="projetos-titulo">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <div><span class="section-index">01 / Projetos selecionados</span><h2 id="projetos-titulo">Trabalho em código.<br>Ideias em prática.</h2></div>
           <p class="section-lead">Uma seleção de experiências que desenvolvi e de produtos próprios em diferentes etapas de evolução. Cada projeto abre espaço para decisões técnicas, interfaces e aprendizados.</p>
         </div>
         <div class="project-grid">
-          <article class="project-card featured">
+          <article class="project-card featured" data-reveal>
             <div class="project-visual"><img src="assets/images/tornearia-barbosa-case.webp" alt="Apresentação responsiva do site da Tornearia Barbosa" width="941" height="1672" loading="lazy" decoding="async"></div>
             <div class="project-info">
               <p class="kicker">01 · Desenvolvimento web / case documentado</p>
@@ -70,7 +73,7 @@
               <a href="cases/tornearia-barbosa.html">Ver estudo de caso ↗</a>
             </div>
           </article>
-          <article class="project-card">
+          <article class="project-card" data-reveal>
             <div class="project-visual project-mock" aria-label="Representação conceitual da interface do projeto ENGRENI Agenda">
               <div class="mock-toolbar"><span>ENGRENI / AGENDA</span><span>INTERFACE · ESTUDO</span></div>
               <div class="mock-row"></div><div class="mock-row short"></div>
@@ -83,7 +86,7 @@
               <a href="https://github.com/Daysicunha/engreni-agenda" target="_blank" rel="noopener noreferrer">Conhecer o repositório ↗</a>
             </div>
           </article>
-          <article class="project-card">
+          <article class="project-card" data-reveal>
             <div class="project-visual project-mock light" aria-label="Representação conceitual de organização de produtos para o projeto VITRINI">
               <div class="mock-toolbar"><span>VITRINI</span><span>PRODUTO DIGITAL</span></div>
               <div class="mock-row"></div><div class="mock-row short"></div>
@@ -122,13 +125,13 @@
 
     <section class="section" id="conteudos" aria-labelledby="conteudos-titulo">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <div><span class="section-index">03 / Conteúdos</span><h2 id="conteudos-titulo">Pensar, construir, compartilhar.</h2></div>
           <p class="section-lead">Um arquivo de ideias, estudos e reflexões. Na próxima fase, esta área ganhará uma linha editorial mais voltada a desenvolvimento e tecnologia.</p>
         </div>
         <div class="journal-grid">
-          <article class="journal-card"><small>Arquivo / Experiência digital</small><h3>Presença digital estratégica: o que é e por que importa?</h3><a href="blog/presenca-digital-estrategica.html">Ler artigo do arquivo ↗</a></article>
-          <article class="journal-card"><small>Arquivo / Plataformas</small><h3>O que muda quando um negócio depende apenas do Instagram?</h3><a href="blog/depender-apenas-do-instagram-riscos.html">Ler artigo do arquivo ↗</a></article>
+          <article class="journal-card" data-reveal><small>Arquivo / Experiência digital</small><h3>Presença digital estratégica: o que é e por que importa?</h3><a href="blog/presenca-digital-estrategica.html">Ler artigo do arquivo ↗</a></article>
+          <article class="journal-card" data-reveal><small>Arquivo / Plataformas</small><h3>O que muda quando um negócio depende apenas do Instagram?</h3><a href="blog/depender-apenas-do-instagram-riscos.html">Ler artigo do arquivo ↗</a></article>
         </div>
       </div>
     </section>
