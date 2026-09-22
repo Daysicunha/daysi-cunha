@@ -12,3 +12,21 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
   document.addEventListener('click', e => { if (!nav.contains(e.target) && !toggle.contains(e.target)) setOpen(false); });
 })();
+
+
+(function () {
+  // Progressive enhancement: text/content remain visible without JavaScript.
+  if (!('IntersectionObserver' in window) ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const reveals = document.querySelectorAll('[data-reveal]');
+  if (!reveals.length) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -24px 0px' });
+  reveals.forEach((element) => observer.observe(element));
+  document.documentElement.classList.add('motion-ready');
+})();
