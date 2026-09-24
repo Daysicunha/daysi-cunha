@@ -191,3 +191,34 @@ body.home-v2 .hero h1 .hero-title-line .hero-rotator{min-width:0}
  body.home-v2 .hero h1 .hero-title-line{letter-spacing:-.075em}
  body.home-v2 .hero h1 .hero-title-line .hero-gradient{max-width:100%}
 }
+
+/* Páginas internas seguem o mesmo sistema cromático, com menor intensidade. */
+body:not(.home-v2) .page-hero-personal{
+  background:radial-gradient(ellipse at 100% 0%,rgba(155,184,206,.27),transparent 46%),
+             radial-gradient(ellipse at 0% 100%,rgba(216,182,165,.28),transparent 50%),var(--paper);
+}
+body:not(.home-v2) .page-hero-personal h1{color:var(--navy)}
+body:not(.home-v2) .page-hero-personal h1 em,
+body:not(.home-v2) .chapter h2 em{color:#8B2E48}
+body:not(.home-v2) .chapter:not(.chapter-dark):not(.company-bridge):nth-of-type(even){
+  background:linear-gradient(133deg,#F3F1EC 0%,#EAE3EC 100%);
+}
+body:not(.home-v2) .chapter-dark{
+  background:radial-gradient(ellipse at 95% 35%,rgba(165,64,85,.27),transparent 57%),
+             linear-gradient(125deg,#22283C,#42164B);
+}
+body:not(.home-v2) .chapter-dark h2{color:var(--paper)}
+body:not(.home-v2) .chapter-dark h2 em{color:var(--peach)}
+body:not(.home-v2) .company-bridge{
+  background:linear-gradient(135deg,#F0E3DB 0%,#E8E0EC 60%,#DEE6EF 100%);
+}
+body:not(.home-v2) .chapter h2{color:var(--navy)}
+body:not(.home-v2) .chapter-dark h2{color:var(--paper)}
+body:not(.home-v2) .editorial-card,
+body:not(.home-v2) .contact-option{border-radius:12px;border-color:#DDD6DE}
+body:not(.home-v2) .editorial-card a,
+body:not(.home-v2) .back-link{color:#82314D}
+body:not(.home-v2) .btn{background:var(--navy);border-radius:100px}
+body:not(.home-v2) .footer{background:#1D2235;border:0}
+body:not(.home-v2) .footer-inner{color:#D5D2DC}
+body:not(.home-v2) .footer a{color:#D5D2DC}
