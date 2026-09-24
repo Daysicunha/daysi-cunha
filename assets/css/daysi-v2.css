@@ -41,7 +41,7 @@
 
 
 /* Fotografia editorial em formato retrato, com enquadramento responsivo. */
-.hero-figure{width:100%;max-width:570px;justify-self:end}
+.hero-figure{width:100%;max-width:450px;justify-self:end}
 .hero-photo-shell{aspect-ratio:4/5;background:#1b1818}
 .hero-photo-shell img{width:100%;height:100%;object-fit:cover;object-position:50% 26%;filter:none}
 .hero-figure .photo-corner{background:rgba(243,241,236,.86)}
