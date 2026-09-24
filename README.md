@@ -43,3 +43,7 @@ Arquivos `solucoes.html`, `processo.html`, `vitrini.html`, `blog.html`, `cases.h
 Servir a raiz do repositório com `python3 -m http.server 8000` e abrir `http://localhost:8000`. O repositório usa HTML, CSS e JavaScript sem build.
 
 © 2026 Daysi Cunha.
+
+## Publicação de prévia
+
+A branch `daysi-preview` é destinada à visualização da identidade Daysi Cunha 2.0. Atualizações desta branch não devem publicar a versão em produção (`main`).
