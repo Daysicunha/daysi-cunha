@@ -30,3 +30,43 @@
   reveals.forEach((element) => observer.observe(element));
   document.documentElement.classList.add('motion-ready');
 })();
+
+
+/* Hero pessoal: animação de entrada e alternância autoral de palavras. */
+(function () {
+  const hero = document.querySelector('body.home-v2 .hero');
+  if (!hero) return;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduced) hero.classList.add('motion-entered');
+
+  const wrapper = hero.querySelector('[data-hero-rotator]');
+  const word = wrapper && wrapper.querySelector('.hero-rotator-word');
+  if (!wrapper || !word || reduced) return;
+  const words = ['digital.', 'real.', 'possível.'];
+  let current = 0;
+  let interval = null;
+  const animateWord = () => {
+    current = (current + 1) % words.length;
+    wrapper.classList.remove('is-switching');
+    word.textContent = words[current];
+    // A troca só atualiza uma região decorativa. O título mantém um aria-label estável.
+    void wrapper.offsetWidth;
+    wrapper.classList.add('is-switching');
+  };
+  const start = () => {
+    if (interval) return;
+    interval = window.setInterval(animateWord, 3400);
+  };
+  const stop = () => {
+    window.clearInterval(interval);
+    interval = null;
+  };
+  if ('IntersectionObserver' in window) {
+    const watcher = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && !document.hidden) start();
+      else stop();
+    }, {threshold: 0.08});
+    watcher.observe(hero);
+  } else start();
+  document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+})();
