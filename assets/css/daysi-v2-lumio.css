@@ -181,3 +181,13 @@ body.home-v2 .footer-inner{color:#C7C6D0}
   .hero-rotator.is-switching .hero-rotator-word{animation:none!important}
   body.home-v2 .project-card,body.home-v2 .project-card:hover{transform:none;transition:none}
 }
+
+/* Cada trecho do título ocupa sua própria linha, com quebra previsível. */
+body.home-v2 .hero h1 .hero-title-line{display:block}
+body.home-v2 .hero h1 .hero-title-line .hero-outline{display:inline}
+body.home-v2 .hero h1 .hero-title-line .hero-gradient{display:block;width:max-content;max-width:100%}
+body.home-v2 .hero h1 .hero-title-line .hero-rotator{min-width:0}
+@media(max-width:700px){
+ body.home-v2 .hero h1 .hero-title-line{letter-spacing:-.075em}
+ body.home-v2 .hero h1 .hero-title-line .hero-gradient{max-width:100%}
+}
