@@ -1,0 +1,348 @@
+
+/* Hero Daysi Cunha 2.0 — retrato sem moldura e tipografia editorial */
+body.home-v2 .site-header{
+  position:relative;
+  z-index:30;
+  background:#101522;
+  border-bottom:1px solid rgba(216,182,165,.08);
+}
+body.home-v2 .hero.hero--portrait{
+  position:relative;
+  isolation:isolate;
+  min-height:clamp(680px,calc(100svh - 86px),830px);
+  color:#fcfbf8;
+  background:#0e1320;
+  overflow:hidden;
+  padding:0;
+}
+body.home-v2 .hero.hero--portrait::before,
+body.home-v2 .hero.hero--portrait::after{
+  position:absolute;
+  inset:0;
+  border-radius:0;
+  filter:none;
+  animation:none;
+  transform:none;
+  opacity:1;
+  pointer-events:none;
+}
+body.home-v2 .hero.hero--portrait::before{
+  z-index:-3;
+  background:
+    radial-gradient(ellipse 35% 66% at 83% 52%,rgba(165,64,85,.46),transparent 83%),
+    radial-gradient(ellipse 50% 72% at 57% 93%,rgba(66,22,75,.65),transparent 80%),
+    radial-gradient(ellipse 38% 46% at 74% 23%,rgba(58,87,131,.27),transparent 82%),
+    linear-gradient(108deg,#090e19 0%,#171c2f 49%,#201932 76%,#100f20 100%);
+}
+body.home-v2 .hero.hero--portrait::after{
+  z-index:-1;
+  background:linear-gradient(90deg,rgba(10,15,27,.54) 0%,rgba(10,15,27,.30) 35%,transparent 64%);
+}
+body.home-v2 .hero--portrait .hero-ambient{
+  z-index:-2;
+  inset:0;
+  background:
+    radial-gradient(circle at 88% 57%,rgba(211,80,157,.24),transparent 27%),
+    radial-gradient(circle at 58% 77%,rgba(119,52,119,.27),transparent 33%);
+}
+body.home-v2 .hero--portrait .hero-ambient::before{
+  right:-10%;top:5%;width:65vw;height:65vw;max-height:780px;max-width:780px;
+  border-radius:50%;
+  border:1px solid rgba(216,182,165,.10);
+  box-shadow:0 0 110px rgba(165,64,85,.14),inset 0 0 80px rgba(155,184,206,.09);
+}
+body.home-v2 .hero--portrait .hero-watermark{
+  z-index:0;
+  top:5%;left:4%;
+  transform:none;
+  font-size:clamp(120px,20vw,340px);
+  letter-spacing:-.085em;
+  color:transparent;
+  -webkit-text-stroke:1px rgba(216,182,165,.045);
+}
+body.home-v2 .hero-network{
+  position:absolute;
+  inset:0;
+  width:100%;height:100%;
+  z-index:1;
+  color:#c18bb9;
+  opacity:.34;
+  pointer-events:none;
+  overflow:visible;
+}
+body.home-v2 .hero-network .network-lines{
+  fill:none;
+  stroke:url(#not-used);
+  stroke:#9e85ac;
+  stroke-width:.85;
+  vector-effect:non-scaling-stroke;
+  opacity:.55;
+}
+body.home-v2 .hero-network .network-nodes{fill:#d4aed2;opacity:.9}
+body.home-v2 .hero.hero--portrait .hero-grid{
+  position:relative;
+  z-index:2;
+  width:min(calc(100% - 2*var(--pad)),1440px);
+  min-height:inherit;
+  max-width:1440px;
+  display:grid;
+  grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);
+  gap:0;
+  align-items:stretch;
+}
+body.home-v2 .hero--portrait .hero-copy{
+  position:relative;
+  z-index:4;
+  align-self:center;
+  max-width:none;
+  padding:clamp(58px,7vw,110px) 0 100px;
+}
+body.home-v2 .hero--portrait .hero .eyebrow,
+body.home-v2 .hero--portrait .eyebrow{
+  margin-bottom:27px;
+  font-size:clamp(9px,.75vw,11px);
+  font-weight:700;
+  letter-spacing:.18em;
+  color:#dbc3bc;
+}
+body.home-v2 .hero--portrait .eyebrow::before{width:38px;background:var(--peach)}
+body.home-v2 .hero--portrait h1.hero-editorial-title{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:0;
+  width:max-content;
+  max-width:100%;
+  color:#fcfbf8;
+  font-family:var(--display);
+  line-height:1.03;
+  letter-spacing:-.075em;
+  font-size:clamp(44px,5.1vw,82px);
+  font-weight:700;
+  margin:0;
+}
+.hero-editorial-title .hero-name{
+  color:#fcfbf8;
+  font-weight:700;
+  white-space:nowrap;
+}
+.hero-editorial-title .hero-point{color:#e5a0b7}
+body.home-v2 .hero--portrait h1 .hero-role-outline{
+  display:block;
+  padding-block:.065em;
+  font-size:.94em;
+  font-weight:600;
+  color:transparent;
+  -webkit-text-stroke:1.15px rgba(250,248,250,.92);
+  paint-order:stroke fill;
+  white-space:nowrap;
+  line-height:1.09;
+}
+body.home-v2 .hero--portrait h1 .hero-role-solid{
+  display:flex;
+  align-items:center;
+  gap:.10em;
+  font-size:1.06em;
+  line-height:1.12;
+  color:#eac4b8;
+}
+body.home-v2 .hero--portrait .hero-typing{
+  display:inline-block;
+  width:3.15ch;
+  overflow:hidden;
+  white-space:nowrap;
+  animation:daysi-typing-in 1.15s steps(3,end) both;
+}
+@keyframes daysi-typing-in{from{width:0}to{width:3.15ch}}
+body.home-v2 .hero--portrait .hero-caret{
+  display:inline-block;
+  width:2px;
+  height:.88em;
+  background:#f4e9e4;
+  margin-top:.06em;
+  animation:daysi-caret-blink 1.05s steps(1,end) infinite;
+}
+@keyframes daysi-caret-blink{50%{opacity:0}}
+body.home-v2 .hero--portrait .intro{
+  max-width:49ch;
+  margin:24px 0 0;
+  font-size:clamp(15px,1.1vw,17px);
+  line-height:1.75;
+  color:#e0dfea;
+}
+body.home-v2 .hero--portrait .actions{
+  display:flex;
+  gap:16px 27px;
+  margin-top:32px;
+  flex-wrap:wrap;
+}
+body.home-v2 .hero--portrait .actions .btn{
+  min-height:54px;
+  padding:14px 22px;
+  background:#bad8e9;
+  border-color:#bad8e9;
+  color:#22283c;
+  border-radius:999px;
+}
+body.home-v2 .hero--portrait .actions .text-cta{color:#fcfbf8}
+body.home-v2 .hero--portrait .hero-figure{
+  position:relative;
+  z-index:2;
+  align-self:stretch;
+  justify-self:stretch;
+  width:100%;
+  max-width:none;
+  min-width:0;
+  margin:0;
+  pointer-events:none;
+}
+body.home-v2 .hero--portrait .hero-photo-shell{
+  position:absolute;
+  inset:-20px -7vw 0 -8vw;
+  width:auto;
+  height:auto;
+  aspect-ratio:auto;
+  overflow:visible;
+  background:transparent;
+}
+body.home-v2 .hero--portrait .hero-photo-shell::before{
+  content:"";
+  position:absolute;
+  top:10%;right:0;
+  width:88%;height:75%;
+  border-radius:50%;
+  background:radial-gradient(ellipse,rgba(181,71,131,.26) 0%,rgba(87,49,130,.13) 50%,transparent 74%);
+  filter:blur(29px);
+  pointer-events:none;
+}
+body.home-v2 .hero--portrait .hero-photo-shell::after{
+  content:"";
+  position:absolute;
+  z-index:2;
+  inset:auto -1px -1px -1px;
+  height:18%;
+  border:0;
+  background:linear-gradient(to bottom,transparent,#101320);
+  pointer-events:none;
+}
+body.home-v2 .hero--portrait .hero-photo-shell picture{
+  position:absolute;
+  inset:0;
+  display:block;
+  height:100%;
+  width:100%;
+}
+body.home-v2 .hero--portrait .hero-photo-shell img{
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center bottom;
+  border:0;
+  background:transparent;
+  filter:drop-shadow(0 0 32px rgba(97,54,111,.19));
+  -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 76%,rgba(0,0,0,.93) 84%,transparent 100%);
+  mask-image:linear-gradient(to bottom,#000 0%,#000 76%,rgba(0,0,0,.93) 84%,transparent 100%);
+}
+body.home-v2 .hero--portrait .figure-caption{display:none}
+body.home-v2 .hero--portrait .hero-scroll-cue{
+  left:var(--pad);
+  bottom:28px;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.16em;
+  color:#d2c7d7;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-transform:uppercase;
+}
+body.home-v2 .hero--portrait .hero-scroll-cue span{
+  color:#eac4b8;
+  font-size:28px;
+  font-weight:400;
+  line-height:1;
+}
+body.home-v2 .hero--portrait .hero-scroll-cue::after{display:none}
+@media(min-width:1650px){
+  body.home-v2 .hero--portrait .hero-photo-shell{right:-9vw}
+}
+@media(max-width:1200px){
+  body.home-v2 .hero--portrait h1.hero-editorial-title{font-size:clamp(42px,5.2vw,66px)}
+  body.home-v2 .hero--portrait .hero-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+  body.home-v2 .hero--portrait .hero-photo-shell{inset:-8px -8vw 0 -7vw}
+  body.home-v2 .hero--portrait .intro{max-width:46ch}
+}
+@media(max-width:910px){
+  body.home-v2 .hero.hero--portrait{min-height:690px}
+  body.home-v2 .hero--portrait .hero-grid{grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr)}
+  body.home-v2 .hero--portrait h1.hero-editorial-title{font-size:clamp(39px,5.3vw,53px)}
+  body.home-v2 .hero--portrait .hero-copy{padding:66px 0 100px}
+  body.home-v2 .hero--portrait .hero-photo-shell{inset:-8px -9vw 0 -6vw}
+}
+@media(max-width:760px){
+  body.home-v2 .hero.hero--portrait{min-height:0}
+  body.home-v2 .hero--portrait .hero-grid{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    min-height:0;
+    align-items:stretch;
+  }
+  body.home-v2 .hero--portrait .hero-copy{
+    align-self:stretch;
+    width:calc(100% - 2*var(--pad));
+    margin-inline:auto;
+    padding:clamp(42px,8vw,67px) 0 5px;
+  }
+  body.home-v2 .hero--portrait .eyebrow{
+    font-size:9px;
+    letter-spacing:.13em;
+    margin-bottom:18px;
+  }
+  body.home-v2 .hero--portrait h1.hero-editorial-title{
+    font-size:clamp(37px,8.9vw,66px);
+    max-width:100%;
+  }
+  body.home-v2 .hero--portrait h1 .hero-role-outline{font-size:.85em}
+  body.home-v2 .hero--portrait .intro{
+    margin-top:22px;
+    max-width:46ch;
+    font-size:14px;
+  }
+  body.home-v2 .hero--portrait .actions{gap:14px 20px;margin-top:26px}
+  body.home-v2 .hero--portrait .hero-figure{
+    align-self:stretch;
+    width:100%;
+    height:clamp(380px,104vw,565px);
+    margin:10px 0 0;
+    min-height:0;
+    overflow:hidden;
+  }
+  body.home-v2 .hero--portrait .hero-photo-shell{
+    position:absolute;
+    inset:-14px -6vw -2px -6vw;
+    width:auto;
+    height:auto;
+  }
+  body.home-v2 .hero--portrait .hero-photo-shell img{
+    object-position:50% bottom;
+    -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 72%,rgba(0,0,0,.88) 80%,transparent 100%);
+    mask-image:linear-gradient(to bottom,#000 0%,#000 72%,rgba(0,0,0,.88) 80%,transparent 100%);
+  }
+  body.home-v2 .hero--portrait .hero-scroll-cue{display:none}
+  body.home-v2 .hero-network{opacity:.18;transform:scale(1.5);transform-origin:center}
+  body.home-v2 .hero--portrait .hero-watermark{top:12%;font-size:24vw}
+}
+@media(max-width:380px){
+  body.home-v2 .hero--portrait h1.hero-editorial-title{font-size:clamp(34px,8.7vw,39px)}
+  body.home-v2 .hero--portrait .actions .btn{min-height:49px}
+  body.home-v2 .hero--portrait .hero-figure{height:355px}
+}
+@media(prefers-reduced-motion:reduce){
+  body.home-v2 .hero--portrait .hero-typing{width:auto;animation:none!important}
+  body.home-v2 .hero--portrait .hero-caret{animation:none!important;opacity:1}
+  body.home-v2 .hero-network{animation:none!important}
+}
