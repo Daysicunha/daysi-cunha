@@ -38,3 +38,17 @@
 .project-card:hover .project-visual img{transform:scale(1.035)}
 @media(max-width:700px){.hero::before{width:110vw;height:110vw;top:-13%;left:-60%;opacity:.38}.hero::after{width:110vw;height:110vw;bottom:-12%;right:-60%;opacity:.32}.ticker-set{gap:22px;padding-inline:22px}.ticker-inner{justify-content:flex-start;text-align:left}}
 @media(prefers-reduced-motion:reduce){.hero::before,.hero::after,.hero-word-motion span,.ticker-track{animation:none!important}.ticker-viewport{mask-image:none}.ticker-track{width:100%;flex-wrap:wrap;justify-content:center}.ticker-set{min-width:0;width:100%;flex-wrap:wrap;justify-content:center;white-space:normal}.ticker-set[aria-hidden="true"]{display:none}.motion-ready [data-reveal]{opacity:1;transform:none}.project-card:hover .project-visual img{transform:none}}
+
+
+/* Fotografia editorial em formato retrato, com enquadramento responsivo. */
+.hero-figure{width:100%;max-width:570px;justify-self:end}
+.hero-photo-shell{aspect-ratio:4/5;background:#1b1818}
+.hero-photo-shell img{width:100%;height:100%;object-fit:cover;object-position:50% 26%;filter:none}
+.hero-figure .photo-corner{background:rgba(243,241,236,.86)}
+@media(max-width:700px){
+ .hero-figure{justify-self:start;width:min(100%,480px);max-width:480px}
+ .hero-photo-shell{aspect-ratio:4/4.6}
+ .hero-photo-shell img{object-position:50% 22%}
+ .hero-grid{gap:34px}
+}
+@media(max-width:420px){.hero-photo-shell{aspect-ratio:4/4.8}}
