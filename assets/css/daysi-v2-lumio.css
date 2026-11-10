@@ -222,3 +222,25 @@ body:not(.home-v2) .btn{background:var(--navy);border-radius:100px}
 body:not(.home-v2) .footer{background:#1D2235;border:0}
 body:not(.home-v2) .footer-inner{color:#D5D2DC}
 body:not(.home-v2) .footer a{color:#D5D2DC}
+
+
+/* Refinamento da navegação 2.0 · Novembro de 2026
+   Mantém o sistema visual e equaliza interações desktop/mobile. */
+.site-header{isolation:isolate}
+.menu a{position:relative;min-height:44px;display:inline-flex;align-items:center}
+.menu a:not(.menu-company)::after{content:"";position:absolute;left:0;right:100%;bottom:5px;height:1px;background:var(--peach);transition:right .22s ease}
+.menu a:not(.menu-company):hover::after,.menu a[aria-current="page"]:not(.menu-company)::after{right:0}
+.header-socials a{min-width:38px;min-height:44px}
+.header-cta{min-height:44px}
+@media(max-width:910px){
+  .menu{inset:100% 0 auto;max-height:calc(100dvh - 72px);overflow-y:auto;overscroll-behavior:contain;padding-bottom:max(28px,env(safe-area-inset-bottom))}
+  .menu a{display:flex;min-height:48px}
+  .menu a:not(.menu-company)::after{display:none}
+  .menu a[aria-current="page"]{color:var(--peach)}
+  .menu-toggle{position:relative;z-index:2;min-width:44px;min-height:44px}
+  .menu-mobile-footer{flex-wrap:wrap;gap:8px 24px}
+  .menu-mobile-footer a{display:inline-flex;align-items:center;min-height:44px;padding:8px 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .menu a:not(.menu-company)::after{transition:none}
+}
