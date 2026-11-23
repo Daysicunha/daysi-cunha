@@ -98,7 +98,7 @@
   }
 
   const blogSearch = document.querySelector("[data-blog-search]");
-  const categoryControls = document.querySelectorAll("[data-category]");
+  const categoryControls = document.querySelectorAll("button[data-category]");
   const articleCards = document.querySelectorAll("[data-article-card]");
   const searchEmpty = document.querySelector("[data-search-empty]");
   let activeCategory = "todos";
@@ -128,4 +128,11 @@
       filterArticles();
     });
   });
+  const portfolioFilters=[...document.querySelectorAll("button[data-portfolio-filter]")];
+  const portfolioCards=[...document.querySelectorAll("[data-portfolio-card]")];
+  portfolioFilters.forEach(button=>button.addEventListener("click",()=>{
+    const filter=button.dataset.portfolioFilter;
+    portfolioFilters.forEach(b=>b.setAttribute("aria-pressed",String(b===button)));
+    portfolioCards.forEach(card=>{card.hidden=filter!=="todos"&&card.dataset.portfolioCategory!==filter;});
+  }));
 })();

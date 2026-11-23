@@ -10,7 +10,7 @@
   position: absolute;
   inset: -20% -10% auto 45%;
   height: 680px;
-  background: radial-gradient(circle, rgba(194, 163, 98, 0.14), transparent 62%);
+  background: radial-gradient(circle, rgba(255, 131, 189, 0.14), transparent 62%);
   pointer-events: none;
 }
 
@@ -91,7 +91,7 @@
   position: absolute;
   inset: 11% 5% 8% 9%;
   border-radius: 50%;
-  background: rgba(194, 163, 98, 0.09);
+  background: rgba(255, 131, 189, 0.09);
   filter: blur(65px);
 }
 
@@ -224,7 +224,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #c2a362;
+  color: #ff83bd;
   font-family: var(--font-mono);
   font-size: 0.6rem;
   letter-spacing: 0.08em;
@@ -234,8 +234,8 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #c2a362;
-  box-shadow: 0 0 14px rgba(194,163,98,0.65);
+  background: #ff83bd;
+  box-shadow: 0 0 14px rgba(255, 131, 189,0.65);
 }
 
 .vitrini-demo__admin p {
@@ -256,7 +256,7 @@
 }
 
 .vitrini-demo__admin-row b {
-  color: #c2a362;
+  color: #ff83bd;
   font-weight: 500;
 }
 
@@ -266,7 +266,7 @@
   padding: 10px 12px;
   border: 0;
   border-radius: 8px;
-  background: #c2a362;
+  background: #ff83bd;
   color: #111;
   font-size: 0.72rem;
   font-weight: 700;
@@ -361,7 +361,7 @@
 }
 
 .vitrini-flow {
-  background: #0d0d0d;
+  background: #211925;
   border-block: 1px solid var(--border);
 }
 
@@ -416,11 +416,11 @@
   grid-template-columns: 1.15fr 0.85fr;
   gap: 64px;
   padding: 54px;
-  border: 1px solid rgba(194, 163, 98, 0.34);
+  border: 1px solid rgba(255, 131, 189, 0.34);
   border-radius: 30px;
   background:
-    radial-gradient(circle at 88% 20%, rgba(194, 163, 98, 0.13), transparent 30%),
-    linear-gradient(145deg, #17150f, #0e0e0e 70%);
+    radial-gradient(circle at 88% 20%, rgba(255, 131, 189, 0.13), transparent 30%),
+    linear-gradient(145deg, #35263b, #211925 70%);
 }
 
 .vitrini-buy__copy > p:not(.tag) {
@@ -509,10 +509,10 @@
 }
 
 .service-card--product {
-  border-color: rgba(194, 163, 98, 0.42);
+  border-color: rgba(255, 131, 189, 0.42);
   background:
-    radial-gradient(circle at 90% 12%, rgba(194, 163, 98, 0.18), transparent 32%),
-    linear-gradient(145deg, #17150f, #0e0e0e 72%);
+    radial-gradient(circle at 90% 12%, rgba(255, 131, 189, 0.18), transparent 32%),
+    linear-gradient(145deg, #35263b, #211925 72%);
 }
 
 .service-card__badge {
@@ -520,7 +520,7 @@
   width: max-content;
   margin: -12px 0 22px;
   padding: 6px 9px;
-  border: 1px solid rgba(194,163,98,0.38);
+  border: 1px solid rgba(255, 131, 189,0.38);
   border-radius: 999px;
   color: var(--accent);
   font-family: var(--font-mono);
