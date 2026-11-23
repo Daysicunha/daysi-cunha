@@ -116,3 +116,13 @@ html{scroll-behavior:smooth}html.ct-intro-open{overflow:hidden}.ct-skip{position
 .ct-hero--layered .ct-hero-copy{max-width:none;padding:28px 0 62px}
 .ct-hero--layered .ct-ribbon{height:42px}
 }
+
+/* 1.6 — passagem do filme para hero e presença do retrato */
+.ct-film-stage{--film-exit:0;background:radial-gradient(ellipse at 52% 48%,#6b536d65,transparent 56%),linear-gradient(180deg,#1a1420 50%,#2a152c 100%)}
+.ct-film-controls{opacity:calc(1 - var(--film-exit));transition:opacity .15s linear}.ct-film-stage.is-exiting .ct-film-controls{pointer-events:none;visibility:hidden}.ct-film-stage.is-exiting .ct-film-scene{opacity:0;transition:opacity .28s ease}
+.ct-hero.ct-hero--layered{scroll-margin-top:76px;background-position:center 50%}
+.ct-hero--layered>.ct-portrait{right:max(2%,calc((100vw - 1510px)/2));width:45%}
+.ct-hero--layered>.ct-portrait img{height:98%;max-height:98%;mask-image:linear-gradient(to bottom,#000 0%,#000 94%,#000b 100%);-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 94%,#000b 100%)}
+.ct-hero--layered .ct-ribbon{opacity:.7;height:52px}
+@media(max-width:1100px) and (min-width:761px){.ct-hero--layered>.ct-portrait{right:1%;width:44%}.ct-hero--layered>.ct-portrait img{height:95%;max-height:95%}}
+@media(max-width:760px){.ct-hero.ct-hero--layered{scroll-margin-top:66px;background-position:68% top}.ct-hero--layered>.ct-portrait{inset:auto;width:100%}.ct-hero--layered>.ct-portrait img{height:100%;max-height:100%}.ct-hero--layered .ct-ribbon{height:42px}}
