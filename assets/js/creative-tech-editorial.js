@@ -20,13 +20,26 @@
       const progress=Math.max(0,Math.min(1,(top-rect.top)/total));
       const index=Math.min(scenes.length-1,Math.floor(progress*scenes.length));
       stage.style.setProperty('--film-progress',String(progress));
+      const exit=Math.max(0,Math.min(1,(window.innerHeight-rect.bottom)/Math.max(1,stage.offsetHeight*.25)));
+      stage.style.setProperty('--film-exit',String(exit));
+      stage.classList.toggle('is-exiting',exit>=.8);
       track.style.transform='scaleX('+progress+')';
       if(last!==index){scenes.forEach((scene,i)=>{scene.classList.toggle('is-active',i===index);scene.setAttribute('aria-hidden',String(i!==index));});last=index;}
       if(progress>=.995)remember();
     }
     function queue(){if(!frame)frame=requestAnimationFrame(render);}
     window.addEventListener('scroll',queue,{passive:true});window.addEventListener('resize',queue,{passive:true});
-    film.querySelector('[data-ct-skip]').addEventListener('click',remember);
+    function enterHero(event){
+      event.preventDefault();
+      remember();
+      film.hidden=true;
+      history.replaceState(null,'',location.pathname+location.search+'#inicio');
+      document.getElementById('inicio').scrollIntoView({behavior:'instant',block:'start'});
+      document.getElementById('ct-title').focus({preventScroll:true});
+      window.removeEventListener('scroll',queue);window.removeEventListener('resize',queue);
+    }
+    film.querySelector('[data-ct-skip]').addEventListener('click',enterHero);
+    document.querySelectorAll('.ct-header a[href="#inicio"]').forEach(a=>a.addEventListener('click',enterHero));
     render();
   }
   const portraits=[...document.querySelectorAll('[data-ct-portrait]')];
