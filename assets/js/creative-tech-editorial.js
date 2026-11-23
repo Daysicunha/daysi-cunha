@@ -29,11 +29,11 @@
     film.querySelector('[data-ct-skip]').addEventListener('click',remember);
     render();
   }
-  const portrait=document.querySelector('[data-ct-portrait]');
-  if(portrait){
+  const portraits=[...document.querySelectorAll('[data-ct-portrait]')];
+  if(portraits.length){
     const candidate=new Image();
-    candidate.onload=()=>{portrait.src=candidate.src;portrait.width=candidate.naturalWidth;portrait.height=candidate.naturalHeight;portrait.alt='Retrato de Daysi Cunha com símbolo luminoso de comércio local';portrait.closest('.ct-hero').classList.add('ct-hero--editorial-photo');};
-    candidate.src=portrait.dataset.ctPortrait;
+    candidate.onload=()=>{portraits.forEach(portrait=>{portrait.src=candidate.src;portrait.width=candidate.naturalWidth;portrait.height=candidate.naturalHeight;portrait.alt='Retrato de Daysi Cunha com símbolo luminoso de comércio local';portrait.classList.add('ct-editorial-photo');portrait.closest('.ct-hero')?.classList.add('ct-hero--editorial-photo');});};
+    candidate.src=portraits[0].dataset.ctPortrait;
   }
   const site=window.DaysiSite;
   if(site?.whatsapp)document.querySelectorAll('[data-ct-whatsapp]').forEach(a=>{a.href='https://wa.me/'+site.whatsapp+'?text='+encodeURIComponent('Olá, Daysi! Gostaria de conversar sobre uma ideia, projeto ou oportunidade.');});
