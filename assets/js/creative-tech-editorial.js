@@ -6,23 +6,44 @@
     nav.addEventListener('click',e=>{if(e.target.closest('a'))closeMenu();});
     document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.getAttribute('aria-expanded')==='true'){closeMenu();menu.focus();}});
   }
-  const intro=document.querySelector('#ct-intro');
-  let seen=false; try{seen=sessionStorage.getItem('daysi-creative-intro-v1')==='1';}catch{}
-  if(intro && typeof intro.showModal==='function' && !seen && !location.hash && !matchMedia('(prefers-reduced-motion: reduce)').matches){
-    const dismiss=()=>{if(intro.open)intro.close();};
-    intro.querySelector('[data-ct-skip]').addEventListener('click',dismiss);
-    intro.addEventListener('close',()=>{document.documentElement.classList.remove('ct-intro-open');});
-    try{sessionStorage.setItem('daysi-creative-intro-v1','1');}catch{}
-    intro.showModal();document.documentElement.classList.add('ct-intro-open');
-    setTimeout(dismiss,2300);
+  const film=document.querySelector('#ct-film');
+  let seen=false;try{seen=sessionStorage.getItem('daysi-film-v2')==='1';}catch{}
+  if(film && !seen && !location.hash && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    film.hidden=false;
+    const stage=film.querySelector('.ct-film-stage'),scenes=[...film.querySelectorAll('[data-film-scene]')],track=film.querySelector('.ct-film-track span');
+    const remember=()=>{try{sessionStorage.setItem('daysi-film-v2','1');}catch{}};
+    let frame=0,last=-1;
+    function render(){
+      frame=0;
+      const total=Math.max(1,film.offsetHeight-stage.offsetHeight);
+      const rect=film.getBoundingClientRect(),top=parseFloat(getComputedStyle(stage).top)||0;
+      const progress=Math.max(0,Math.min(1,(top-rect.top)/total));
+      const index=Math.min(scenes.length-1,Math.floor(progress*scenes.length));
+      stage.style.setProperty('--film-progress',String(progress));
+      track.style.transform='scaleX('+progress+')';
+      if(last!==index){scenes.forEach((scene,i)=>{scene.classList.toggle('is-active',i===index);scene.setAttribute('aria-hidden',String(i!==index));});last=index;}
+      if(progress>=.995)remember();
+    }
+    function queue(){if(!frame)frame=requestAnimationFrame(render);}
+    window.addEventListener('scroll',queue,{passive:true});window.addEventListener('resize',queue,{passive:true});
+    film.querySelector('[data-ct-skip]').addEventListener('click',remember);
+    render();
+  }
+  const portrait=document.querySelector('[data-ct-portrait]');
+  if(portrait){
+    const candidate=new Image();
+    candidate.onload=()=>{portrait.src=candidate.src;portrait.width=candidate.naturalWidth;portrait.height=candidate.naturalHeight;portrait.alt='Retrato de Daysi Cunha com símbolo luminoso de comércio local';portrait.closest('.ct-hero').classList.add('ct-hero--editorial-photo');};
+    candidate.src=portrait.dataset.ctPortrait;
   }
   const site=window.DaysiSite;
   if(site?.whatsapp)document.querySelectorAll('[data-ct-whatsapp]').forEach(a=>{a.href='https://wa.me/'+site.whatsapp+'?text='+encodeURIComponent('Olá, Daysi! Gostaria de conversar sobre uma ideia, projeto ou oportunidade.');});
   const navLinks=[...document.querySelectorAll('#ct-navigation a[href^="#"]')];
   if('IntersectionObserver' in window){
     const sections=navLinks.map(a=>document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
-    const observer=new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(!visible)return;navLinks.forEach(a=>{if(a.hash==='#'+visible.target.id)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});},{rootMargin:'-15% 0px -55% 0px'});
-    sections.forEach(s=>observer.observe(s));
+    let pending=false;
+    function syncNav(){pending=false;const threshold=Math.min(180,window.innerHeight*.27);let current=sections[0];for(const s of sections.slice().sort((a,b)=>a.offsetTop-b.offsetTop)){if(s.getBoundingClientRect().top<=threshold)current=s;}
+      navLinks.forEach(a=>{if(current&&a.hash==='#'+current.id)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});}
+    window.addEventListener('scroll',()=>{if(!pending){pending=true;requestAnimationFrame(syncNav);}},{passive:true});syncNav();
   }
   const year=document.querySelector('[data-ct-year]');if(year)year.textContent=new Date().getFullYear();
 })();
