@@ -6,41 +6,53 @@
     nav.addEventListener('click',e=>{if(e.target.closest('a'))closeMenu();});
     document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.getAttribute('aria-expanded')==='true'){closeMenu();menu.focus();}});
   }
+  // Abertura em motion design: quatro cenas, 3,2 segundos cada, sem vídeo pesado.
   const film=document.querySelector('#ct-film');
-  let seen=false;try{seen=sessionStorage.getItem('daysi-film-v2')==='1';}catch{}
-  if(film && !seen && !location.hash && !matchMedia('(prefers-reduced-motion: reduce)').matches){
-    film.hidden=false;
-    const stage=film.querySelector('.ct-film-stage'),scenes=[...film.querySelectorAll('[data-film-scene]')],track=film.querySelector('.ct-film-track span');
-    const remember=()=>{try{sessionStorage.setItem('daysi-film-v2','1');}catch{}};
-    let frame=0,last=-1;
-    function render(){
-      frame=0;
-      const total=Math.max(1,film.offsetHeight-stage.offsetHeight);
-      const rect=film.getBoundingClientRect(),top=parseFloat(getComputedStyle(stage).top)||0;
-      const progress=Math.max(0,Math.min(1,(top-rect.top)/total));
-      const index=Math.min(scenes.length-1,Math.floor(progress*scenes.length));
-      stage.style.setProperty('--film-progress',String(progress));
-      const exit=Math.max(0,Math.min(1,(window.innerHeight-rect.bottom)/Math.max(1,stage.offsetHeight*.25)));
-      stage.style.setProperty('--film-exit',String(exit));
-      stage.classList.toggle('is-exiting',exit>=.8);
-      track.style.transform='scaleX('+progress+')';
-      if(last!==index){scenes.forEach((scene,i)=>{scene.classList.toggle('is-active',i===index);scene.setAttribute('aria-hidden',String(i!==index));});last=index;}
-      if(progress>=.995)remember();
+  const motion=matchMedia('(prefers-reduced-motion: reduce)');
+  let seen=false;try{seen=sessionStorage.getItem('daysi-motion-v3')==='1';}catch{}
+  if(film && typeof film.showModal==='function' && !seen && !location.hash && !motion.matches){
+    const stage=film.querySelector('.ct-film-stage'),scenes=[...film.querySelectorAll('[data-film-scene]')],track=film.querySelector('.ct-film-track span'),pause=film.querySelector('[data-ct-pause]');
+    const sceneTime=3200,duration=scenes.length*sceneTime;
+    let elapsed=0,previous=null,frame=0,index=-1,paused=false,closing=false,finished=false,exitTimer=0;
+    const remember=()=>{try{sessionStorage.setItem('daysi-motion-v3','1');}catch{}};
+    function cleanUp(){
+      if(finished)return;finished=true;cancelAnimationFrame(frame);clearTimeout(exitTimer);
+      document.removeEventListener('visibilitychange',resetClock);motion.removeEventListener?.('change',onMotion);
+      document.documentElement.classList.remove('ct-intro-open');remember();
+      if(film.open)film.close();
     }
-    function queue(){if(!frame)frame=requestAnimationFrame(render);}
-    window.addEventListener('scroll',queue,{passive:true});window.addEventListener('resize',queue,{passive:true});
-    function enterHero(event){
-      event.preventDefault();
-      remember();
-      film.hidden=true;
-      history.replaceState(null,'',location.pathname+location.search+'#inicio');
-      document.getElementById('inicio').scrollIntoView({behavior:'instant',block:'start'});
-      document.getElementById('ct-title').focus({preventScroll:true});
-      window.removeEventListener('scroll',queue);window.removeEventListener('resize',queue);
+    function finish(immediate=false){
+      if(closing||finished)return;closing=true;cancelAnimationFrame(frame);
+      if(immediate||motion.matches){cleanUp();return;}
+      film.classList.add('is-leaving');exitTimer=setTimeout(cleanUp,650);
     }
-    film.querySelector('[data-ct-skip]').addEventListener('click',enterHero);
-    document.querySelectorAll('.ct-header a[href="#inicio"]').forEach(a=>a.addEventListener('click',enterHero));
-    render();
+    function resetClock(){previous=null;}
+    function onMotion(e){if(e.matches)finish(true);}
+    function setPaused(value){
+      paused=value;previous=null;pause.textContent=value?'Continuar':'Pausar';
+      pause.setAttribute('aria-pressed',String(value));stage.classList.toggle('is-paused',value);
+    }
+    function tick(now){
+      if(closing||finished)return;
+      if(!paused&&!document.hidden&&previous!==null)elapsed+=Math.min(now-previous,100);
+      previous=now;
+      const next=Math.min(scenes.length-1,Math.floor(elapsed/sceneTime));
+      if(index!==next){
+        index=next;stage.dataset.filmIndex=String(index);
+        scenes.forEach((scene,i)=>{scene.classList.toggle('is-active',i===index);scene.setAttribute('aria-hidden',String(i!==index));});
+      }
+      track.style.transform='scaleX('+Math.min(1,elapsed/duration)+')';
+      if(elapsed>=duration){finish();return;}
+      frame=requestAnimationFrame(tick);
+    }
+    pause.addEventListener('click',()=>setPaused(!paused));
+    film.querySelector('[data-ct-skip]').addEventListener('click',()=>finish(true));
+    film.addEventListener('cancel',e=>{e.preventDefault();finish(true);});
+    film.addEventListener('close',cleanUp,{once:true});
+    document.addEventListener('visibilitychange',resetClock);
+    motion.addEventListener?.('change',onMotion);
+    document.documentElement.classList.add('ct-intro-open');
+    film.showModal();frame=requestAnimationFrame(tick);
   }
   const portraits=[...document.querySelectorAll('[data-ct-portrait]')];
   if(portraits.length){

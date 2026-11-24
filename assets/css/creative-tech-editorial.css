@@ -126,3 +126,49 @@ html{scroll-behavior:smooth}html.ct-intro-open{overflow:hidden}.ct-skip{position
 .ct-hero--layered .ct-ribbon{opacity:.7;height:52px}
 @media(max-width:1100px) and (min-width:761px){.ct-hero--layered>.ct-portrait{right:1%;width:44%}.ct-hero--layered>.ct-portrait img{height:95%;max-height:95%}}
 @media(max-width:760px){.ct-hero.ct-hero--layered{scroll-margin-top:66px;background-position:68% top}.ct-hero--layered>.ct-portrait{inset:auto;width:100%}.ct-hero--layered>.ct-portrait img{height:100%;max-height:100%}.ct-hero--layered .ct-ribbon{height:42px}}
+
+/* 2.1 — sequência cinematográfica automática e composição mobile */
+.ct-film.ct-film--motion{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;overflow:hidden;background:#1a1420;color:#f3efe8;opacity:1;transition:opacity .65s ease}
+.ct-film--motion:not([open]){display:none}
+.ct-film--motion::backdrop{background:#1a1420;transition:opacity .65s ease}
+.ct-film--motion.is-leaving,.ct-film--motion.is-leaving::backdrop{opacity:0;pointer-events:none}
+.ct-film--motion .ct-film-stage{position:relative;inset:auto;width:100%;height:100%;height:100dvh;min-height:0;background:#1a1420}
+.ct-film-backdrop{position:absolute;inset:-7%;z-index:-2;background:linear-gradient(100deg,#211326e8,#341d35b5 50%,#2e152ed9),url('../images/daysi-hero-background.webp') center/cover no-repeat;transform:scale(1.04);opacity:.48;transition:transform 3.2s cubic-bezier(.2,.6,.3,1),opacity 1s}
+.ct-film-stage[data-film-index="1"] .ct-film-backdrop{transform:scale(1.16) translate(2%,-1%);opacity:.67}
+.ct-film-stage[data-film-index="2"] .ct-film-backdrop{transform:scale(1.24) translate(-3%,1%);opacity:.76}
+.ct-film-stage[data-film-index="3"] .ct-film-backdrop{transform:scale(1.05);opacity:.46}
+.ct-film-light{position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 55%,#6b536d8c,transparent 60%),linear-gradient(115deg,transparent 35%,#ff83bd17 49%,transparent 63%);background-size:100% 100%,200% 100%;animation:ct-film-light 9s ease-in-out infinite alternate;pointer-events:none}
+@keyframes ct-film-light{from{background-position:center,100% center}to{background-position:center,0% center}}
+.ct-film--motion .ct-film-scene{transform:translateY(16px) scale(1.035);filter:blur(6px);transition:opacity .7s ease,transform .9s cubic-bezier(.2,.65,.3,1),filter .7s ease}
+.ct-film--motion .ct-film-scene.is-active{opacity:1;transform:none;filter:none}
+.ct-film--motion .ct-film-scene>span{text-shadow:0 12px 42px #170d21a8}
+.ct-film--motion .ct-film-signature>span{font-weight:650;letter-spacing:-.065em}
+.ct-film--motion .ct-film-controls{opacity:1;visibility:visible;display:grid;justify-items:center;gap:16px;bottom:max(26px,env(safe-area-inset-bottom));width:min(84%,380px)}
+.ct-film--motion .ct-film-track{width:100%;height:2px}
+.ct-film--motion .ct-film-actions{display:flex;gap:12px;justify-content:center}
+.ct-film--motion .ct-film-actions .ct-btn{min-height:44px;background:#281c2cb0}
+.ct-film--motion .ct-film-actions .ct-btn[data-ct-skip]{border-color:#ff83bd88}
+.ct-film-stage.is-paused .ct-film-light{animation-play-state:paused}
+@media(max-width:920px){.ct .ct-nav>.ct-menu{display:inline-flex;flex:none;min-width:44px;min-height:44px}.ct .ct-nav>.ct-btn:not(.ct-menu){display:none}.ct .ct-navlinks.is-open{display:flex}}
+@media(max-width:760px){
+  .ct-hero.ct-hero--layered{background-size:auto clamp(380px,112vw,540px);background-position:68% top;background-color:#29162b}
+  .ct-hero--layered:before{background:linear-gradient(180deg,#29162b26 0%,#29162b1c 17%,#29162b62 30%,#29162be8 45%,#29162b 59%);}
+  .ct-hero--layered>.ct-portrait{position:relative;inset:auto;width:100%;height:clamp(250px,75vw,385px);padding:12px 18px 0;align-items:flex-end;overflow:visible}
+  .ct-hero--layered>.ct-portrait img{width:auto;height:100%;max-width:100%;max-height:100%;object-fit:contain;mask-image:linear-gradient(to bottom,#000 0%,#000 85%,#000d 91%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 85%,#000d 91%,transparent 100%);filter:drop-shadow(0 0 24px #f79c6b24)}
+  .ct-hero--layered>.ct-wrap{margin-top:-12px}
+  .ct-hero--layered .ct-hero-copy{padding:14px 0 45px;max-width:100%}
+  .ct-hero--layered .ct-kicker{font-size:.63rem;letter-spacing:.08em;gap:9px;margin-bottom:12px!important}
+  .ct-hero--layered h1{font-size:clamp(2rem,8.5vw,3.3rem);line-height:1.08;letter-spacing:-.045em}
+  .ct-hero--layered h1 em{font-size:.65em;line-height:1.15;margin-top:8px}
+  .ct-hero--layered .ct-lead{font-size:.95rem;line-height:1.6;margin-top:14px!important}
+  .ct-hero--layered .ct-actions{gap:9px;margin-top:17px}
+  .ct-hero--layered .ct-actions .ct-btn{min-height:45px;padding:9px 15px}
+  .ct-hero--layered .ct-hero-tags{margin-top:17px;font-size:.59rem}
+  .ct-hero--layered .ct-ribbon{height:32px}
+  .ct-film--motion .ct-film-backdrop{background-position:center,65% center}
+  .ct-film--motion .ct-film-scene{padding:0 20px;gap:13px}
+  .ct-film--motion .ct-film-scene>span{font-size:clamp(2.75rem,10.5vw,5rem)}
+  .ct-film--motion .ct-film-scene>.ct-kicker{font-size:.65rem}
+}
+@media(max-width:380px){.ct .ct-nav{gap:10px}.ct .ct-brand{font-size:1.03rem;gap:8px}.ct-hero--layered .ct-hero-tags{gap:6px}.ct-hero--layered .ct-kicker{font-size:.59rem}}
+@media(prefers-reduced-motion:reduce){.ct-film--motion{display:none!important}}
