@@ -1,0 +1,21 @@
+name: Institutional QA
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  static-qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Validate local links and SEO
+        run: python3 tests/static_release_qa.py
+      - name: Validate JavaScript syntax
+        run: |
+          for file in assets/js/*.js; do
+            node --check "$file" || exit 1
+          done
